@@ -1,0 +1,32 @@
+---
+layout: default
+title: "Variables" 
+categories: javascript 
+---
+
+<div class="home">
+    <h1 class="post-title">Variables HTML</h1>
+  
+                <p>Question: what does alert (x); show?</p>
+
+{% highlight js %}
+var x = [1,2,3];
+var y = x;
+y[1]=100;
+alert (x[1]);
+{% endhighlight %}
+
+                <p>Answer: 1</p>
+
+                <p>Question: what does alert (x[1]); show?</p>
+
+{% highlight js %}
+var x = [1,2,3];
+var y = x;
+y[1]=100;
+alert (x[1]);
+{% endhighlight %}
+
+                <p>Answer: 100</p>
+    
+</div>

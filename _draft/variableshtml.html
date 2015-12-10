@@ -1,0 +1,47 @@
+--- 
+layout: default
+title: "Variables html" 
+date: 2015-12-02 13:24:36 -0800 
+categories: javascript 
+---
+
+
+
+
+<div class="page-content">
+    <div class="wrapper">
+        <article class="post">
+
+            <header class="post-header">
+                <h1 class="post-title">Variables HTML</h1>
+            </header>
+
+            <div class="post-content">
+                <p>Question: what does alert (x); show?</p>
+
+
+{% highlight js %}
+var x = [1,2,3];
+var y = x;
+y[1]=100;
+alert (x[1]);
+{% endhighlight %}
+
+                <p>Answer: 1</p>
+
+                <p>Question: what does alert (x[1]); show?</p>
+
+{% highlight js %}
+var x = [1,2,3];
+var y = x;
+y[1]=100;
+alert (x[1]);
+{% endhighlight %}
+
+                <p>Answer: 100</p>
+
+
+            </div>
+    </div>
+        
+</div>
