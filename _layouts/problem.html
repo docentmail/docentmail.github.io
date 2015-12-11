@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+        
+<script language="javascript"> 
+function toggleVisibility(idButton, idTarget, toggleContentName) {
+	var targetEle = document.getElementById(idTarget);
+	var buttonEle = document.getElementById(idButton);    
+    
+    if (targetEle.style.display == "block" ){
+        targetEle.style.display = "none";
+		buttonEle.value = "Show "+toggleContentName;
+    } else {
+        targetEle.style.display = "block";
+		buttonEle.value = "Hide "+toggleContentName;
+    }
+} 
+</script>
+      
+<style>
+.toggle-button{
+    background-color: linen;
+    font-size: 14px;
+    font-weight: bold; 
+    margin: 3px; 
+}
+
+</style>
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

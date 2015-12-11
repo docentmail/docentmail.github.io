@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: problem
 title: "Problem 2015-12-03-10-21" 
 permalink: /javascript/problem/2015-12-03-10-21.html
 categories: javascript, variables
@@ -30,12 +30,20 @@ var y = x;
 y[1]=100;
 alert (x[1]);
 {% endhighlight %}
-                <p><b>Tip:</b> y and x are arrays. The variables contain references to the same array sitting in memory.  </p>
+    
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+                <p><b>Tip:</b> y and x are arrays. The variables contain references to the same array sitting in memory.  </p>    </div>    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
                 <p><b>Answer:</b> 100<br/>
                     Because y and x are reference type
                 </p>
                 <p><b>Explanation:</b> Try to become familiar with the distinction between primitive and reference types.<br/>
-                    <a target="_blank"  href="http://docstore.mik.ua/orelly/webprog/jscript/ch04_04.htm">look at</a>
+                    <a target="_blank"  href="http://docstore.mik.ua/orelly/webprog/jscript/ch04_04.htm">Read it for details</a>
                 </p>
+    </div>
     
 </div>
