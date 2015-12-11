@@ -1,0 +1,41 @@
+---
+layout: default
+title: "Problem 2015-12-03-10-20" 
+permalink: /javascript/problem/2015-12-03-10-20.html
+categories: javascript, variables
+header: |   # the field is using to show problem info in topic list. E.g. see http://localhost:4000/javascript/variables-topic.html
+ <p><b>Question:</b> what does alert (x); show?</p>
+ <PRE>
+ var x = 1;
+ var y = x;
+ y=101;
+ alert (x);
+ </PRE>     
+
+complexity: 2   # from 1 to 10.   1 is the simplest. 10 is most complex.
+importance: 4   # from 1 to 10.   1 is the least important. 10 is most important.
+author: docentmail 
+---
+
+<div class="home">
+    <h1 class="post-title">Variables HTML</h1>
+  
+    
+    <hr/>
+                <p><b>Question:</b> what does alert (x); show?</p>
+
+{% highlight js %}
+var x = 1;
+var y = x;
+y=101;
+alert (x);
+{% endhighlight %}
+                <p><b>Tip:</b> y and x are primitive variables. The variables independently contain value.  </p>
+                <p><b>Answer:</b> 1<br/>
+                    Because y and x are primitive variables
+                </p>
+                <p><b>Explanation:</b> Try to become familiar with the distinction between primitive and reference types.<br/>
+                    <a target="_blank"  href="http://docstore.mik.ua/orelly/webprog/jscript/ch04_04.htm">look at</a>
+                </p>
+    
+</div>

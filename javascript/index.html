@@ -4,29 +4,25 @@ layout: default
 
 <div class="home">
 
-  <h1 class="page-heading">JavasScript</h1>
+  <h1 >JavaScript</h1>
+  <h2 >List of the topics</h2>    
 
 {% for page in site.pages %}
-  {% if page.categories contains 'javascript' %}
+  {% if page.categories contains 'javascrit_topic' %}
     <div class="item">
-        <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
     </div>
   {% endif %}
 {% endfor %}    
+
+    <br/>
+    <br/>
     
-  <ul class="post-list">
-    {% for post in site.javascript %}
-      #{post.title}
-      <li>
-        <span class="post-meta">{{ post.title}}</span>
-
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
+    
+    <h2>Useful links</h2>
+    <a target="_blank" href="http://www.youtube.com/playlist?list=PL62E185BB8577B63D">Douglas Crockford Lectures on JavaScript on Youtube</a>
+    <br/>
+    <a target="_blank" href="http://www.w3schools.com/js/default.asp">W3Schools JavaScript Tutorial</a>
+    <br/>
+    
 </div>

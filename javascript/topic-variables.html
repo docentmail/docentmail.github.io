@@ -1,0 +1,23 @@
+---
+layout: default
+title: "JavaScript. Variables related problems " 
+categories: javascrit_topic 
+permalink: /javascript/variables-topic.html
+---
+
+<div class="home">
+ <h1 class="page-heading">JavasScript variables</h1>
+
+{% for page in site.pages %}
+  {% if page.categories contains 'javascript' and page.categories contains 'variables'%}
+    <div class="item">
+        <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <p>coplexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+        <p>{{page.header}}</p>
+        <hr/>
+    </div>
+  {% endif %}
+{% endfor %}    
+    
+    
+</div>
