@@ -12,7 +12,7 @@ permalink: /javascript/topic-complexity-low.html
   {% if page.categories contains 'javascript' and page.complexity < 4  | sort: 'complexity', 'importance'  %}
     <div class="item">
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <p>coplexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+        <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
         <p>{{page.header}}</p>
         <hr/>
     </div>
