@@ -1,16 +1,16 @@
 ---
 layout: default
-title: "Problems with high (8-10) complexity " 
-categories: javascrit_complexity 
-permalink: /javascript/topic-complexity-high.html
+title: "Problems added in December 2015 " 
+categories: javascrit_daterange 
+permalink: /javascript/topic-2015-12.html
 ---
 
 <div class="home">
- <h1 class="page-heading">JavaScript high (8-10) complexity </h1>
+ <h1 class="page-heading">JavaScript: Problems added in December 2015 </h1>
 
-{% assign sorted_pages = site.pages | sort: 'complexity' %}
+{% assign sorted_pages = site.pages | sort: "title" %}
 {% for page in sorted_pages reversed %}
-  {% if page.categories contains 'javascript' and page.complexity > 7 %}
+    {% if page.categories contains 'javascript' and page.title > 'Problem 2015-12-01-00-00' and page.title < 'Problem 2015-12-99-99-99'%}
     <div class="item">
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>

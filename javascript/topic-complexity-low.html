@@ -8,8 +8,9 @@ permalink: /javascript/topic-complexity-low.html
 <div class="home">
  <h1 class="page-heading">JavaScript low (1-3) complexity </h1>
 
-{% for page in site.pages %}
-  {% if page.categories contains 'javascript' and page.complexity < 4  | sort: 'complexity', 'importance'  %}
+{% assign sorted_pages = site.pages | sort: 'complexity' %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories contains 'javascript' and page.complexity < 4 %}
     <div class="item">
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>

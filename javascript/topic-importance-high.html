@@ -8,8 +8,9 @@ permalink: /javascript/topic-importance-high.html
 <div class="home">
  <h1 class="page-heading">JavaScript high (8-10) importance </h1>
 
-{% for page in site.pages %}
-  {% if page.categories contains 'javascript' and page.importance > 7 | sort: 'importance', 'complexity' %}
+{% assign sorted_pages = site.pages | sort: 'importance' %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories contains 'javascript' and page.importance > 7 %}
     <div class="item">
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
