@@ -6,8 +6,8 @@ categories: post
 ---
 Site improvement:
 
-Initial structure of site was created.
-Working on beautification of "task" page layout.
+- Initial structure of site was created.
+- Working on beautification of "task" page layout.
 
 
 

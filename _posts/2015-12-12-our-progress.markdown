@@ -6,10 +6,8 @@ categories: post
 ---
 Site improvements:
 
-Project has moved to new domain name, knowtheweb.org
-
-We have first javascript problem submitted by a kid.
-
-public agile boar on trello.com was created 
+- Project has moved to new domain name, knowtheweb.org
+- We have first javascript problem submitted by a kid.
+- public agile boar on trello.com was created 
 
 
