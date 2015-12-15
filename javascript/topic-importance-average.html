@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Problems with low (1-3) complexity " 
-categories: javascrit_complexity 
-permalink: /javascript/topic-complexity-low.html
+title: "Problems with average (4-7) importance  " 
+categories: javascrit_importance 
+permalink: /javascript/topic-importance-average.html
 ---
 
 <div class="home">
- <h1 class="page-heading">JavaScript low (1-3) complexity </h1>
+ <h1 class="page-heading">JavaScript average (4-7) importance </h1>
 
 {% for page in site.pages %}
-  {% if page.categories contains 'javascript' and page.complexity < 4  | sort: 'complexity', 'importance'  %}
+  {% if page.categories contains 'javascript' and page.importance > 3 and page.importance < 8 | sort: 'importance', 'complexity' %}
     <div class="item">
         <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
