@@ -28,7 +28,9 @@ var files = evt.dataTransfer.files;
     
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
-                <p><b>Tip:</b> Think in details how Javascript executs this line</p>
+        <p><b>Tip:</b> Think in details how Javascript executs this line <br/>
+        To claclulate expression JavaScript finds object under variable <b>evt</b>, than find property of this object with name <b>dataTransfer</b>, and so on.
+        </p>
     </div>    
     <br/>
     <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
@@ -42,7 +44,7 @@ var b =a.dataTransfer;
 var c = b.files;
 var files = c;
 {% endhighlight %}
-                
+
     </div>
 </div>
 
