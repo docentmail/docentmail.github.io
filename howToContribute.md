@@ -23,8 +23,38 @@ Jekyll is using <b>Liqud</b> as template engine [Liquid for Designers](https://g
 
 [Creating pull request](https://help.github.com/articles/creating-a-pull-request/)
 
+How to assign correct complexity and importance for the Javascript problem? 
+ Idea behind this is:
+
+- complexity shows how hard to understand the case. 
+- importance shows how importarnt to understand the case. E.g. know how it works for 1+2+"aaa" is important, but know result of typeof(typeof(123)) is not.
+
+<h4>Samples</h4>
+<hr/>
+This problem has: 
+
+- 5 complexity - because it is pretty ...
+- 2 importance - because it is pretty rear and wierd case.
+<p><b>Question:</b> how many times method do() would be called? </p>
+ <PRE> 
+ for (i = 0, j=3; i <j ; i++,j-- ) { 
+    do();
+ }
+ </PRE>      
+<hr/>
+
+This problem has:
+
+- 2 complexity - because it is pretty simple to understand. No tricky tricks.
+- 5 importance - because it is pretty generic case. It is just normal for loop.
+   <p><b>Question:</b> how many times method do() would be called? </p>
+{% highlight js %}
+for (i = 0; i < 1 ; i++) { 
+    do();
+}
+{% endhighlight %}
+<hr/>
 
 Gene: {% include icon-github.html username="docentmail" %} /
-
 Nikita: {% include icon-github.html username="4luckynikita" %} /
 
