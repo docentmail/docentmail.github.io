@@ -23,7 +23,7 @@ Jekyll is using <b>Liqud</b> as template engine [Liquid for Designers](https://g
 
 [Creating pull request](https://help.github.com/articles/creating-a-pull-request/)
 
-[Template for file of JavaScript problem](https://raw.githubusercontent.com/docentmail/docentmail.github.io/master/assets/problem-2015-12-18-17-25.html_template)
+[Template for file of JavaScript problem](https://raw.githubusercontent.com/docentmail/docentmail.github.io/master/_draft/problem-2015-12-18-17-25.html_template)
 
 How to assign correct complexity and importance for the Javascript problem? 
  Idea behind this is:
