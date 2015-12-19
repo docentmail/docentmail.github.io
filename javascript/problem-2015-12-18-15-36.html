@@ -1,0 +1,47 @@
+---
+layout: problem # NOTE: don't change this line
+title: Problem 2015-12-18-15-36
+permalink: /javascript/problem/2015-12-18-15-36.html
+categories: javascript, other
+header: |
+ <p><b>Question:</b> Give two variants how to access "<b>name</b>" property of  given <b>cat</b> object.</p>
+ <PRE>
+ var cat = {name:"Peter", hi:function() {alert("Hello my friend");}}
+ </PRE>      
+
+complexity: 1
+importance: 3
+author: docentmail
+---
+
+<div class="home">
+    <h1 class="post-title">Access object's property</h1>
+    <h2>Problem 2015-12-18-17-25</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Give two variants how to access "<b>name</b>" property of  given <b>cat</b> object.</p>
+<!-- NOTE: this optional question code -->    
+{% highlight js %}
+var cat = {name:"Peter", hi:function() {alert("Hello my friend");}}
+{% endhighlight %}
+    
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b> Recall <b>.</b> and <b>[]</b> methods</p> 
+    </div>    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> See the code below.
+{% highlight js %}
+cat.name;
+cat[“name”];
+{% endhighlight %}
+
+        </p> 
+         <a target="_blank"  href="http://www.w3schools.com/js/js_objects.asp">Read it for details</a>
+        
+    </div>
+</div>
