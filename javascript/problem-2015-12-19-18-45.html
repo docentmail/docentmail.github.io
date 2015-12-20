@@ -1,0 +1,44 @@
+---
+layout: problem 
+title: Problem 2015-12-19-18-45
+permalink: /javascript/problem/2015-12-19-18-45.html
+categories: javascript, variables
+header: |   
+ <p><b>Question:</b>How can you define the text John Doe  as a string </p>
+      
+
+complexity: 1   
+importance: 3  
+author: 4luckynikta
+
+---
+ 
+
+<div class="home">
+    <h1 class="post-title">Making Strings</h1>  
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> How can you define the text <i>John Doe  as a string</i> </p> 
+  
+
+    
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  There are <b>2</b> ways to write a string.</p>    
+    </div>    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> 
+ {% highlight js %}
+ "John Doe"
+ 'John Doe'
+ {% endhighlight %}
+        
+                    </p> 
+         <a target="_blank"  href="http://www.w3schools.com/js/js_strings.asp">Read it for details</a> 
+    </div>
+</div>
