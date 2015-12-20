@@ -1,2 +1,2 @@
 # docentmail.github.io
-To get more information look at  [knowtheweb.org](knowtheweb.org).
+To get more information look at  [knowtheweb.org](http://knowtheweb.org).
