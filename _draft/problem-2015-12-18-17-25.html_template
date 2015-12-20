@@ -5,7 +5,7 @@
 # Please remove all "NOTE:" like comments from your final file. Don't forget remove this commet as well.
 # Pay attention:
 # - Format of the time is YYYY-MM-DD-hh-mm (no am/pm). So for problem created Desember,18 2015 at 5:25 pm. 2015-12-18-17-25
-# - Date and time should be the same as it is in the name of the problem file.  
+# - Date and time should be the same as it is in the name of the problem file (see fields "title", "permalink".  
 # ****************************************************************************
 # NOTE: start of the file header.  This is YAML format. Please look here ?????? to be familiar with it.
 layout: problem # NOTE: don't change this line
