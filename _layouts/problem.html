@@ -6,6 +6,14 @@
   <body>
         
 <script language="javascript"> 
+
+/**
+* Shows / hides specific block on the page. Designed to be used as onclick event 
+*
+*idButton - id of button that toggles visibility of content
+*idTarget - id of the div (could be other element) that would hides/shows
+*toggleContentName - part of the name of the togle button. E.g. for "tip" would be "Show tip" / "Hide tip"
+**/
 function toggleVisibility(idButton, idTarget, toggleContentName) {
 	var targetEle = document.getElementById(idTarget);
 	var buttonEle = document.getElementById(idButton);    
@@ -18,6 +26,37 @@ function toggleVisibility(idButton, idTarget, toggleContentName) {
 		buttonEle.value = "Hide "+toggleContentName;
     }
 } 
+    
+/** Executes String as JavaScript. 
+*   Parameter: idTextAreaWithJsCode - id of the the textarea element that contains text to evaluate
+*
+*   here is fragment of HTML that is using the function
+*
+*    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+*    <div id="eval" style="display: none">
+*            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+*            <br/>    
+*            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+*    </div>    
+*
+**/
+function doEval(idTextAreaWithJsCode) {
+	var textArea = document.getElementById(idTextAreaWithJsCode);
+    var jsToEval= textArea.value;
+    
+    try {
+      eval(jsToEval);
+    } catch(e) {
+      alert("Fix errors in you script: "+ e);    
+      var err = e.constructor('Error in Evaled Script: ' + e.message);
+      // +3 because `err` has the line number of the `eval` line plus two.
+      err.lineNumber = e.lineNumber - err.lineNumber + 3;
+      throw err;
+    }
+} 
+</script>
+      
+
 </script>
       
 <style>
@@ -26,6 +65,20 @@ function toggleVisibility(idButton, idTarget, toggleContentName) {
     font-size: 14px;
     font-weight: bold; 
     margin: 3px; 
+}
+
+.eval-button{
+    background-color: linen;
+    font-size: 10px;
+    font-weight: normal
+    margin: 2px; 
+}
+    
+.eval-textarea{
+    background-color: linen;
+    margin: 3px; 
+    width: 700px;
+    height: 200px;
 }
 
 </style>
