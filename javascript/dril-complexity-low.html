@@ -1,0 +1,19 @@
+---
+layout: drill
+titleForDrill: Drilling JavaScript <b>Low</b> complxity problems
+permalink: /javascript/problem/dril-complexity-low.html
+---
+ 
+
+
+<script>
+{% assign sorted_pages = site.pages | sort: 'complexity' %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories contains 'javascript' and page.complexity < 4 %}
+    problemUrls.push("{{page.permalink}}");
+  {% endif %}
+{% endfor %}    
+</script>
+    
+
+

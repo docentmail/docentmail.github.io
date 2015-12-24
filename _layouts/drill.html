@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+<style>
+.drill-button{
+    background-color: linen;
+    font-size: 14px;
+    font-weight: bold; 
+    margin: 3px; 
+}
+</style>
+
+<body>
+<script>
+var problemUrls = [];
+</script>
+      
+        {{ content }}
+
+<script>
+var initialUrlCount=problemUrls.length; // initial number of problems to drill
+var currentUrlNom=0; // index of current Url in problemUrls array problemUrls    
+
+function knowit(){
+  problemUrls.splice(currentUrlNom,1);
+  setNextUrlIndex();
+  showCurrentProblem();    
+}
+    
+function donotknowit(){
+  setNextUrlIndex();
+  showCurrentProblem();    
+}
+
+function setNextUrlIndex(){
+   currentUrlNom = Math.floor(Math.random()*problemUrls.length);
+}
+    
+function showCurrentProblem(){
+    if (problemUrls.length==0) {
+        document.getElementById('iframeproblem').src = "about:blank";
+        alert("there is no more probles to dril!!");
+        return;
+    }
+    document.getElementById('iframeproblem').src = problemUrls[currentUrlNom];
+    displayNumbers();
+}
+
+function displayNumbers(){
+    document.getElementById('showNumbers').innerHTML="Probles to drill "+problemUrls.length+" of "+initialUrlCount;
+}
+    
+</script>
+
+<h1>{{page.titleForDrill}}</h1>
+<iframe frameborder="4" id="iframeproblem"  src="about:blank"  width="1000" height="600">
+</iframe>    
+
+    <br/>
+    <input type="button" class="drill-button" id="toggleEval" onclick="knowit()" value="know"/>
+    <input type="button" class="drill-button" id="toggleEval" onclick="donotknowit()" value="do not know"/>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <span id="showNumbers"></span>
+
+<script>
+showCurrentProblem();
+</script>
+
+    
+  </body>
+
+</html>
