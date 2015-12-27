@@ -14,13 +14,15 @@
 <body>
 <script>
 var problemUrls = [];
+var showCurrentProblem_automaticaly=false; // if JSON comes from external URL page has to wait
+var initialUrlCount=problemUrls.length; // initial number of problems to drill
+var currentUrlNom=0; // index of current Url in problemUrls array problemUrls    
+
 </script>
       
         {{ content }}
 
 <script>
-var initialUrlCount=problemUrls.length; // initial number of problems to drill
-var currentUrlNom=0; // index of current Url in problemUrls array problemUrls    
 
 function knowit(){
   problemUrls.splice(currentUrlNom,1);
@@ -38,6 +40,7 @@ function setNextUrlIndex(){
 }
     
 function showCurrentProblem(){
+        console.log("showCurrentProblem - start");
     if (problemUrls.length==0) {
         document.getElementById('iframeproblem').src = "about:blank";
         alert("there is no more probles to dril!!");
@@ -64,7 +67,9 @@ function displayNumbers(){
     <span id="showNumbers"></span>
 
 <script>
-showCurrentProblem();
+if (showCurrentProblem_automaticaly) {
+    showCurrentProblem();
+}
 </script>
 
     

@@ -1,0 +1,78 @@
+---
+layout: drill
+titleForDrill: Drilling JavaScript problems from JSON's URL (see <b>jsonurl</b> parameter)
+permalink: /javascript/problem/drill-json.html
+---
+ 
+
+
+<script>
+    
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
+ 
+    
+var jsonUrl = getURLParameter('jsonurl');
+console.log(jsonUrl);
+    
+function loadJSON(path, success, error)
+{
+    console.log("loadJSON - start");
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+    
+var title, problemsArray;
+    
+function processJson(data){
+    
+    title=data.title;
+    problemsArray=data.urls;
+    fillAray(problemsArray);
+    console.log("after fillArray");
+    showCurrentProblem();
+//    var theobj = JSON.parse(data);
+//    title = theobj.title;
+//    alert(title);
+//    problemsArray= theobj['urls'];               
+//alert(title);
+//alert(problemsArray.length);
+//alert(problemsArray[0]);
+
+    
+    
+}
+    
+function fillAray(srcArr){
+    Array.prototype.push.apply(problemUrls,srcArr);
+    initialUrlCount=problemUrls.length; // initial number of problems to drill
+    currentUrlNom=0; // index of current Url in problemUrls array problemUrls    
+
+}
+    
+    
+loadJSON(jsonUrl,
+         function(data) { processJson(data); },
+         function(xhr) { console.error(xhr); }
+);
+
+
+    
+    
+    
+</script>
+

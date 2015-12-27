@@ -7,12 +7,16 @@ permalink: /javascript/problem/drill-complexity-low.html
 
 
 <script>
+showCurrentProblem_automaticaly=true; // if JSON comes from external URL page has to wait
+
 {% assign sorted_pages = site.pages | sort: 'complexity' %}
 {% for page in sorted_pages reversed %}
   {% if page.categories contains 'javascript' and page.complexity < 4 %}
     problemUrls.push("{{page.permalink}}");
   {% endif %}
 {% endfor %}    
+
+initialUrlCount=problemUrls.length;
 </script>
     
 
