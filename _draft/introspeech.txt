@@ -1,0 +1,8 @@
+video-------
+
+If you are playing this video, you are most likely new to our site! Let me explain a bit about this site:
+I... am very interested in Javascript, HTML, css and other languages seen in this site. And i have been learning these languages for a long time.
+And now i am interested in using my knowledge to make a new site! And i have asked grown ups to help me wth this. This site is a nonprofit open source project.
+On this site you will find a lot of real world questions, that will help you learn the languages that i mentioned in the begginning of the video.
+These problems will be added by me, my friends, and other contributors. But the most exciting thing is that you can ad your own problems. They will need to be approved though. Git, Github, html, javascript, agile, trello, Google analytics, css, jekyll. To be honest, i currently do not know what half of those words mean,
+but i will be learning those.
