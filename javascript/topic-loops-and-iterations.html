@@ -1,0 +1,37 @@
+---
+layout: default
+title: "Loops and iterations related problems " 
+categories: javascrit_topic
+permalink: /javascript/loops-and-iterations-topic.html
+---
+
+<div class="home">
+ <h1 class="topic-heading">JavasScript: loops and iterations</h1>
+<p>
+The topic contains problems related to:
+    <ul>
+        <li>Statements: for ;do…while; while ; for…in ; for…of; label; break ; continue ; </li>
+    </ul>
+</p>
+<p>
+    Links to read:
+    <ul>
+        <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Loops_and_iteration">Article on mozilla.org</a></li>
+    </ul>
+</p>    
+
+
+{% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories contains 'javascript' and page.categories contains 'loops-and-iterations'%}
+    <div class="item">
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+        <p>{{page.header}}</p>
+        <hr/>
+    </div>
+  {% endif %}
+{% endfor %}    
+    
+    
+</div>

@@ -5,16 +5,17 @@ categories: javascrit_daterange
 permalink: /javascript/topic-2015-12.html
 ---
 
+
 <div class="home">
- <h1 class="page-heading">JavaScript: Problems added in December 2015 </h1>
+ <h1 class="topic-heading">JavaScript: Problems added in December 2015 </h1>
 
 <hr/>
 {% assign sorted_pages = site.pages | sort: "title" %}
 {% for page in sorted_pages reversed %}
     {% if page.categories contains 'javascript' and page.title > 'Problem 2015-12-01-00-00' and page.title < 'Problem 2015-12-99-99-99'%}
     <div class="item">
-        <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
         <p>{{page.header}}</p>
         <hr/>
     </div>

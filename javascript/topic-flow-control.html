@@ -1,0 +1,39 @@
+---
+layout: default
+title: "Flow control related problems" 
+categories: javascrit_topic 
+permalink: /javascript/flow-control-topic.html
+---
+
+<div class="home">
+ <h1 class="topic-heading">JavasScript: Control flow and error handling</h1>
+<p>
+The topic contains problems related to:
+    <ul>
+        <li>statements: block ; if...else ; switch; throw; try...catch</li>
+        <li>finally block;</li>
+        <li>promise</li>        
+    </ul>
+</p>
+<p>
+    Links to read:
+    <ul>
+        <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling">Article on mozilla.org</a></li>
+    </ul>
+</p>    
+
+
+{% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories contains 'javascript' and page.categories contains 'flow-control'%}
+    <div class="item">
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+        <p>{{page.header}}</p>
+        <hr/>
+    </div>
+  {% endif %}
+{% endfor %}    
+    
+    
+</div>
