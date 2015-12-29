@@ -10,7 +10,7 @@ permalink: /javascript/no-tag-topic.html
 
 {% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
 {% for page in sorted_pages reversed %}
-  {% if (page.categories == 'blank' ) 
+  {% if page.categories == 'blank'  
  %}
   
     <div class="item">
