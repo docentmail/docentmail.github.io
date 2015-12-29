@@ -1,0 +1,46 @@
+---
+layout: problem
+title: "Problem 2015-12-13-16-07" 
+permalink: /javascript/problem/2015-12-13-16-07.html
+categories: javascript, general
+header: |   # the field is using to show problem info in topic list. E.g. see http://localhost:4000/javascript/variables-topic.html
+ <p><b>Question N:</b> Question:</b> What will "x" equal?</p>
+ <PRE>
+ var x = "Volvo" + 16 + 4;
+ </PRE>      
+
+complexity: 2   # from 1 to 10.   1 is the simplest. 10 is most complex.
+importance: 2   # from 1 to 10.   1 is the least important. 10 is most important.
+author: 4luckynikita, rorp32, DogeLover1337, TimberWolf91
+---
+ 
+
+
+<div class="home">
+    <h1 class="post-title">Comment usage ({{page.title}})</h1>
+  <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+                <p><b>Question:</b> What will "x" equal?</p>
+
+{% highlight js %}
+ var x = "Volvo" + 16 + 4;
+{% endhighlight %}
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+                <p><b>Tip:</b> Volvo is a string (Interesting cat)  </p>
+    </div>    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+                <p><b>Answer:</b><br/>
+                It will equal "Volvo164"
+                </p>
+                
+    </div>
+</div>
+
+
+
+
