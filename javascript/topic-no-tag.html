@@ -10,10 +10,14 @@ permalink: /javascript/no-tag-topic.html
 
 {% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
 {% for page in sorted_pages reversed %}
-  {% if page.categories == 'blank' 
-    %}
+  {% if page.categories == 'blank' %}
   {% else %}
-  false <br/>    
+    <div class="item">
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>; categories: [<b>{{page.categories}}</b>] </p>
+        <p>{{page.header}}</p>
+        <hr/>
+    </div>
   {% endif %}        
 {% endfor %}    
     
