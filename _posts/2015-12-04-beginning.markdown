@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Begining"
+title:  "Beginning"
 date:   2015-12-04 13:24:36 -0800
 categories: post
 ---
