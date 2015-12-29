@@ -6,11 +6,11 @@ permalink: /javascript/no-tag-topic.html
 ---
 
 <div class="home">
- <h1 class="topic-heading">JavasScript 08: problems with no known tags</h1>
+ <h1 class="topic-heading">JavasScript: problems with no known tags</h1>
 
 {% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
 {% for page in sorted_pages reversed %}
-  {% if page.categories == 'blank' %}
+    {% if (page.categories == 'blank' or page.categories == nil or page.categories == 'javascript' or page.categories == 'javascrit_importance’ or page.categories == 'javascrit_topic' or page.categories == 'javascrit_complexity’ or page.categories == 'javascrit_daterange’ or page.categories == 'headlink') or (page.categories contains 'javascript’ and (page.categories contains 'variables' or page.categories contains 'other' or page.categories contains 'flow-control' or page.categories contains 'loops-and-iterations’)) %}
   {% else %}
     <div class="item">
         <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
