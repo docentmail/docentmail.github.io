@@ -6,7 +6,7 @@ permalink: /javascript/no-tag-topic.html
 ---
 
 <div class="home">
- <h1 class="topic-heading">JavasScript: problems with no known tags</h1>
+ <h1 class="topic-heading">JavasScript 04: problems with no known tags</h1>
 
 {% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
 {% for page in sorted_pages reversed %}
@@ -27,8 +27,7 @@ permalink: /javascript/no-tag-topic.html
             )
         )
  %}
-<!-- because of liquid problem -->    
-{% else %}    
+  
     <div class="item">
         <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
         <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>; categories: [<b>{{page.categories}}</b>] </p>
