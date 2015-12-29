@@ -10,7 +10,15 @@ permalink: /javascript/no-tag-topic.html
 
 {% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
 {% for page in sorted_pages reversed %}
- {% if page.categories == 'blank'
+ {% if (page.categories == 'blank' or 
+           page.categories == nil or 
+           page.categories == 'javascript' or 
+           page.categories == 'javascrit_importance' or
+           page.categories == 'javascrit_topic' or
+           page.categories == 'javascrit_complexity' or
+           page.categories == 'javascrit_daterange' or 
+           page.categories == 'headlink'    
+        )
  %}
     {% else %}
     <div class="item">
