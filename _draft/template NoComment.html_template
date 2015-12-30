@@ -1,0 +1,52 @@
+---
+layout: problem 
+title: Problem 2015-12-18-17-25
+permalink: /javascript/problem/2015-12-18-17-25.html 
+categories: javascript, variables 
+header: | 
+ <p><b>Question:</b> What would be value of <b>x</b>?</p>
+ <PRE>
+ var x = 100 / "10";
+ </PRE>      
+
+complexity: 2  
+importance: 5  
+author: docentmail 
+
+---
+
+<div class="home">
+    <h1 class="post-title">Division to "Apple"</h1>   
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> What would be value of <b>x</b>?</p> 
+{% highlight js %}
+var x = 100 / "10";
+{% endhighlight %}
+    
+  
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+    
+    <br/>
+
+   
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Does value of "10" could be converted to number?</p>    
+    </div>    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Value would be <b>10</b>.</p>     
+         <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> 
+        
+    </div>
+</div>
