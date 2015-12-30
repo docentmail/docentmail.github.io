@@ -1,0 +1,43 @@
+---
+layout: default
+title: "javascript problems todo" 
+permalink: /javascript/problem/todo/list.html
+---
+
+<div class="home">
+ <h1 class="topic-heading">JavaScript problems that are ready implement</h1>
+
+
+{% assign sorted_pages = site.pages %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories == 'javascript-todo-problem' %}
+    {% if page.isready %}
+    <div class="item">
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }} (ready:{{page.isready}})</a>
+        <hr/>
+    </div>
+      {% endif %}
+  {% endif %}
+{% endfor %}    
+
+<br/>
+<br/>
+<br/>    
+ <h1 class="topic-heading">JavaScript problems that require more information</h1>
+    
+{% assign sorted_pages = site.pages %}
+{% for page in sorted_pages reversed %}
+  {% if page.categories == 'javascript-todo-problem' %}
+    {% if page.isready %}
+<!-- -->    
+      {% else %}
+    <div class="item">
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }} (ready:{{page.isready}})</a>
+        <hr/>
+    </div>
+      {% endif %}
+  {% endif %}
+{% endfor %}    
+
+    
+</div>
