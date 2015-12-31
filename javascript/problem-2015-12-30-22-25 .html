@@ -1,0 +1,55 @@
+---
+layout: problem
+title: Problem 2015-12-30-22-25
+permalink: /javascript/problem/2015-12-30-22-25.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> is this a valid JS statement?</p>
+ <PRE>
+ var x= "Hello", cat= "Bob", height = 20;
+ </PRE>      
+
+complexity: 2
+importance: 3
+author: docentmail
+---
+ 
+
+<div class="home">
+    <h1 class="post-title">Usage of commas</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> is this a valid JS statement?</p>
+{% highlight js %}
+var x= "Hello", cat= "Bob", height = 20;
+{% endhighlight %}
+    
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+    
+    <br/>
+
+    
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b> Comma separator</p> 
+    </div>    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Yes.
+        
+        </p>
+        Read it for details<br/>
+         <a target="_blank"  href="http://stackoverflow.com/questions/3781406/javascript-variable-definition-commas-vs-semicolons">commas vs semicolons</a> <br/>
+        <a target="_blank"  href="https://javascriptweblog.wordpress.com/2011/04/04/the-javascript-comma-operator/">the javascript comma operator</a> <br/>
+        
+    </div>
+</div>
