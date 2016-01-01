@@ -66,9 +66,14 @@ var x = 100 / "10";
         
         
         <p> <!-- NOTE: Liks to read more -->   
-            Read it for details:<br/>
-            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <br/> <!-- NOTE: this optional question "Read it for details" links -->    
-            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <br/> <!-- NOTE: this optional question "Read it for details" links -->            
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Link Name 1</a> <br/> <!-- NOTE: this optional question "Read it for details" links -->    
+            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Link name 2</a> <br/> <!-- NOTE: this optional question "Read it for details" links -->            
         </p>
+        
+        
+        
+        <p><b>Looking deeper:</b> What is the difference between <b>!=</b> and <b>!==</b> operators ?</p>
+
     </div>
 </div>
