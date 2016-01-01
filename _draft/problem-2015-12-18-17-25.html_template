@@ -38,7 +38,8 @@ author: docentmail  # NOTE: put your ID here
 {% highlight js %}
 var x = 100 / "10";
 {% endhighlight %}
-    
+
+
     <!-- NOTE: this optional block to add evaluation ability to problem's page -->
     <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
     <div id="eval" style="display: none">
@@ -48,18 +49,26 @@ var x = 100 / "10";
     </div>        
     
     <br/>
-
     <!-- NOTE: this optional (but very usual "tip" area -->
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
         <p><b>Tip:</b>  Does value of "10" could be converted to number?</p> <!-- NOTE: this question Tip -->    
     </div>    
+
+
     <br/>
     <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
     <div id="answer" style="display: none">
     
         <p><b>Answer:</b> Value would be <b>10</b>.</p> <!-- NOTE: this question Answer -->    
-         <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <!-- NOTE: this optional question "Read it for details" links -->    
         
+        <p><b>Explanation:</b> Add some detailde explations if appropriate</p> <!-- NOTE: this Explanation -->    
+        
+        
+        <p> <!-- NOTE: Liks to read more -->   
+            Read it for details:<br/>
+            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <br/> <!-- NOTE: this optional question "Read it for details" links -->    
+            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <br/> <!-- NOTE: this optional question "Read it for details" links -->            
+        </p>
     </div>
 </div>

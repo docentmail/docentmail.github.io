@@ -20,33 +20,40 @@ author: docentmail
     <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
     
     <hr/>
-    <p><b>Question:</b> What would be value of <b>x</b>?</p>
-
+    <p><b>Question:</b> What would be value of <b>x</b>?</p>  
 {% highlight js %}
 var x = 100 / "10";
 {% endhighlight %}
-    
-    
+
+
     <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
     <div id="eval" style="display: none">
             <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
             <br/>    
             <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
     </div>        
-    
-    <br/>
 
-    
+
+    <br/>
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
-        <p><b>Tip:</b>  Does value of "10" could be converted to number?</p> 
+        <p><b>Tip:</b>  Does value of "10" could be converted to number?</p>   
     </div>    
+
+
     <br/>
     <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
     <div id="answer" style="display: none">
     
-        <p><b>Answer:</b> Value would be <b>10</b>.</p>
-         <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> 
+        <p><b>Answer:</b> Value would be <b>10</b>.</p>   
         
+        <p><b>Explanation:</b> Add some detailde explations if appropriate</p>
+        
+        
+        <p>  
+            Read it for details:<br/>
+            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <br/>   
+            <a target="_blank"  href="http://www.w3schools.com/js/js_numbers.asp">Read it for details</a> <br/>      
+        </p>
     </div>
 </div>
