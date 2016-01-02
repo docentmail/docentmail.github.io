@@ -26,6 +26,18 @@ author: docentmail
 var files = evt.dataTransfer.files;
 {% endhighlight %}
     
+       
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+    
+    <br/>
+
+  
+    
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
         <p><b>Tip:</b> Think in details how Javascript executs this line <br/>
