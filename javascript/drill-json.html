@@ -63,9 +63,17 @@ function fillAray(srcArr){
     currentUrlNom=0; // index of current Url in problemUrls array problemUrls    
 
 }
+
+/**
+addds parameter with unique value to url to avoid data caching
+**/
+function addTimestamp(srcUrl){
+    var timeInMs = Date.now();
+    var rezUrl=srcUrl+"?timestamp="+timeInMs;
+    return rezUrl
+}
     
-    
-loadJSON(jsonUrl,
+loadJSON(addTimestamp(jsonUrl),
          function(data) { processJson(data); },
          function(xhr) { console.error(xhr); }
 );
