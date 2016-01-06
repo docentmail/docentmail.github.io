@@ -12,7 +12,7 @@ layout: problem # NOTE: don't change this line
 title: Problem 2015-12-18-17-25 # NOTE: put actual date and time here.
 permalink: /javascript/problem/2015-12-18-17-25.html # NOTE: put actual date and time here. Google "permalink" to understand purpose of the field
 categories: javascript, variables # NOTE: "javascript," is mandatory - because this is JavaScript related problem. Second could be one of the ["variables", "general", "other"]
-header: |   #  NOTE: the field is using to show problem info in topic list. It contains question and optional question code. E.g. see http://knowtheweb.org/javascript/variables-topic.html
+header: |   #  NOTE: the field is using to show problem info in topic list. It contains question and optional question code. E.g. see http://webculum.org/javascript/variables-topic.html
  <p><b>Question:</b> What would be value of <b>x</b>?</p>
  <PRE>
  var x = 100 / "10";
