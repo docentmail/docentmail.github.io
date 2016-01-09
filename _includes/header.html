@@ -26,7 +26,7 @@
         </svg>
       </a>
 
-      <div class="trigger">
+      <div class="trigger" id="main_menu">
         <a class="page-link" href="/index.html">Home</a>  
         {% for my_page in site.pages %}
            {% if my_page.categories contains 'headlink' %}
@@ -35,6 +35,21 @@
             {% endif %}
            {% endif %}
         {% endfor %}
+        
+    <script>
+        if (isTodoDrill()) {
+             //
+            var startDrillLink = document.createElement("a");
+            var textnode = document.createTextNode("Drill"); 
+            startDrillLink.appendChild(textnode);             
+            startDrillLink.title = "Click here to start / proceed with drill your lesson";
+            startDrillLink.href = getNextUrlToDrill();
+            startDrillLink.setAttribute('class',"page-link");    
+            document.getElementById("main_menu").appendChild(startDrillLink);      
+        } 
+        
+    </script>  
+          
           
       </div>
     </nav>

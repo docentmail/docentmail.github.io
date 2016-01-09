@@ -1,0 +1,120 @@
+---
+layout: drill-ws
+titleForDrill: Drilling JavaScript <b>Low</b> complxity problems
+permalink: /javascript/problem/drill-url-ws.html
+---
+ 
+<script>
+    
+function getURLParameter(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
+ 
+    
+var jsonUrl = getURLParameter('jsonurl');
+console.log(jsonUrl);
+    
+function loadJSON(path, success, error)
+{
+    console.log("loadJSON - start");
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText));
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+    
+var title, problemsArray;
+    
+function processJson(data){
+    
+    title=data.title;
+    problemsArray=data.urls;
+    fillAray(problemsArray);
+    console.log("after fillArray");
+    showCurrentProblem();
+//    var theobj = JSON.parse(data);
+//    title = theobj.title;
+//    alert(title);
+//    problemsArray= theobj['urls'];               
+//alert(title);
+//alert(problemsArray.length);
+//alert(problemsArray[0]);
+
+    
+    
+}
+    
+    
+    
+// populate internal drill storage    
+function fillAray(srcArr){
+    var stor=window.localStorage;
+    if(typeof(stor) == "undefined") {
+        alert("localStorage in your browser is not enabled!");
+        return;
+    }
+    // TODO improve array check
+    
+    if (srcArr.length == 0 ) {
+        alert("0 Urls to drill ");
+        return;
+    }
+    
+    // prepare problems structures
+    var drill_problems= {keys_todo : [], keys_done : []};
+    var problem_keys= [];
+    
+    
+    for (var i=0; i<srcArr.length; i++) {
+        var urlKey = "dr"+i;
+        // alert(urlKey +" - "+srcArr[i]);
+        problem_keys.push( {key : urlKey, url : srcArr[i].replace(/^.*\/\/[^\/]+/, '')});
+        drill_problems.keys_todo.push(urlKey);
+        //Array.prototype.push.apply(drill_problems.keys_todo, urlKey);
+    }
+
+    // store problems structures
+    stor.setItem("drill_problems", JSON.stringify(drill_problems) );
+    for (var i=0; i<problem_keys.length; i++) {
+       stor.setItem(problem_keys[i].key, problem_keys[i].url);
+    }
+    
+    Array.prototype.push.apply(problemUrls,srcArr);
+    initialUrlCount=problemUrls.length; // initial number of problems to drill
+    currentUrlNom=0; // index of current Url in problemUrls array problemUrls    
+
+}
+
+/**
+addds parameter with unique value to url to avoid data caching
+**/
+function addTimestamp(srcUrl){
+    var timeInMs = Date.now();
+    var rezUrl=srcUrl+"?timestamp="+timeInMs;
+    return rezUrl
+}
+    
+loadJSON(addTimestamp(jsonUrl),
+         function(data) { processJson(data); },
+         function(xhr) { console.error(xhr); }
+);
+
+
+    
+    
+    
+</script>
+    
+
+
