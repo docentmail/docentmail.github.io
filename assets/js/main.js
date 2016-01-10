@@ -9,7 +9,7 @@ drilling
 function isTodoDrill(){
     var stor=window.localStorage;    
     var drill_problems_string =stor.getItem("drill_problems");
-    if (typeof drill_problems_string == undefined) {
+    if ( drill_problems_string == null || typeof drill_problems_string == undefined) {
         return false;
     }
     
@@ -99,8 +99,27 @@ function getDrillNumbers(){
 **/
 function cleanDrillData(){
    var stor=window.localStorage;  
+    
+    var drill_problems_string =stor.getItem("drill_problems");
+    if (typeof drill_problems_string == undefined) {
+        return;
+    }
+    
+    
+    var drill_problems = JSON.parse( drill_problems_string );
+    if (drill_problems.keys_todo.length == 0 && drill_problems.keys_done.length == 0) {
+      return;
+    } 
+    
+    for (var i=0; i<drill_problems.keys_todo.length; i++) {
+        stor.removeItem(drill_problems.keys_todo[i]);
+    }
+
+    for (var i=0; i<drill_problems.keys_done.length; i++) {
+        stor.removeItem(drill_problems.keys_done[i]);    
+    }
+         
     stor.removeItem("drill_problems");
-//    stor.removeItem("drill_problems");
     location.reload();
 }
 
@@ -228,7 +247,72 @@ function showCurrentProblem(){
 function displayNumbers(){
     document.getElementById('showNumbers').innerHTML="Probles to drill "+problemUrls.length+" of "+initialUrlCount;
 }
+
+/******************************************************************************************
+marked problems
+******************************************************************************************/
+function markProblem(){
+    markProblem_u(window.location.pathname);
+}
+
+/*
+function markProblem_u(parUrl){
+  var urlToMark = removeDomainFromUrl(parUrl);
     
+  var stor=window.localStorage;  
+  var marked_problems_str=stor.getItem("marked_problems");
+  var marked_problems;    
+  if (marked_problems_str == null) {
+      marked_problems=[parUrl];
+  } else {
+      marked_problems = JSON.parse( stor.getItem("marked_problems") );    
+      for (var i=0; i< marked_problems.length; i++) {
+          if (marked_problems[i] == urlToMark) { return; }
+      }
+      marked_problems.push(urlToMark);
+  }
+  stor.setItem("marked_problems", );    
+     
+     
+     
+  var 
+    ++++++++++++++++++++++
+    var problemKey= getDrillProblemKeyByUrl_u(urlParam);
+    
+    
+    
+    
+    
+    if (problemKey != null) {
+        var index = drill_problems.keys_todo.indexOf(problemKey);   
+        if (index !== -1) {
+            drill_problems.keys_todo.splice(index, 1);
+        }
+
+        var index = drill_problems.keys_done.indexOf(problemKey);   
+        if (index == -1) {
+            drill_problems.keys_done.push(problemKey);
+        }
+    }
+    stor.setItem("drill_problems", JSON.stringify(drill_problems) );     ?????????????????????????????????
+    
+    var nextProblem= getNextUrlToDrill();
+    if (nextProblem ==null) {
+        alert("Congrats! you are done with drill");
+        window.location = "/";
+    } else {
+        window.location = getNextUrlToDrill();
+    }    
+    
+}
+
+*/
+function unMarkProblem(){
+}
+
+function cleanAllMarkedProblems(){
+}
+
 
 /******************************************************************************************
 common utilities
