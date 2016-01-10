@@ -30,9 +30,25 @@
     width: 700px;
     height: 200px;
 }
-
+    
 .drill-button{
     background-color: linen;
+    font-size: 10px;
+    font-weight: normal
+    margin: 2px; 
+}
+    
+.drill-button-know{
+    background-color: #48c148;
+    color: white;
+    font-size: 10px;
+    font-weight: normal
+    margin: 2px; 
+}
+
+.drill-button-dont-know{
+    background-color: #d64848;
+    color: white;
     font-size: 10px;
     font-weight: normal
     margin: 2px; 
@@ -44,6 +60,8 @@
     padding: 20px; 
 }
 
+
+
 </style>
     {% include header.html %}
 
@@ -53,9 +71,9 @@
 
         <div id="DrillDiv" class="drill-div" style="display: none">
             Drilling controlls: <span id="drill_numbers"></span> <br/> 
-        <input type="button" class="drill-button" id="toggleAnswer" onclick="knowTheProblem()" value="Know"/>        
-        <input type="button" class="drill-button" id="toggleAnswer" onclick="doNotKnowTheProblem()" value="Don't know"/>
-        <input type="button" class="drill-button" id="toggleAnswer" onclick="cleanDrillData()" value="Clean all drill info"/>        
+        <input type="button" class="drill-button-know" id="toggleAnswer" onclick="knowTheProblem()" value="Know"/>        
+        <input type="button" class="drill-button-dont-know" id="toggleAnswer" onclick="doNotKnowTheProblem()" value="Don't know"/>
+        <input type="button" class="drill-button" id="toggleAnswer" onclick="cleanDrillData()" value="Exit Drill"/>        
             
         </div>
      
