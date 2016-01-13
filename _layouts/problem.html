@@ -73,19 +73,32 @@
 
         <div id="DrillDiv" class="drill-div" style="display: none">
             Drilling controlls: <span id="drill_numbers"></span> <br/> 
-        <input type="button" class="drill-button-know" id="toggleAnswer" onclick="knowTheProblem()" value="Know"/>        
+        <input type="button" class="drill-button-know" onclick="knowTheProblem()" value="Know"/>        
         <input type="button" class="drill-button-dont-know" id="toggleAnswer" onclick="doNotKnowTheProblem()" value="Don't know"/>
         <input type="button" class="drill-button" id="toggleAnswer" onclick="cleanDrillData()" value="Exit Drill"/>        
             
         </div>
-     
-          
 <script>
     if (isCurrentWindowInDrillTodo()) {    
         document.getElementById("DrillDiv").style.display = "block";    
         document.getElementById("drill_numbers").innerHTML=getDrillNumbers();
     }
+    
 </script>  
+
+          
+    <input style="display: none" id="mark_problem_button" type="button" class="drill-button" onclick="markCurrentProblem_reload()" value="Mark problem"/>          
+    <input style="display: none" id="unmark_problem_button" type="button" class="drill-button" onclick="unMarkCurrentProblem_reload()" value="Un-Mark problem"/>          
+<script>
+    if (isCurrentProblemMarked()) {    
+        document.getElementById("unmark_problem_button").style.display = "block";    
+    } else {
+        document.getElementById("mark_problem_button").style.display = "block";    
+    }
+</script>  
+     
+          
+          
       </div>
     </div>
 

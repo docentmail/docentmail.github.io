@@ -1,0 +1,81 @@
+---
+layout: default
+permalink: /index-marked.html
+---
+
+<div class="home">
+
+  <h1 >marked problems management screen</h1>
+    
+  <h2 >links to problems </h2>   
+  <!-- 
+get all marked problems URLs
+add links to list
+-->
+<div id="problems_links">
+
+</div>    
+<script>
+function addMarkedProblemsLinks(){    
+        var markedProblems= getAllMarkedProblemUrls();    
+        if (markedProblems == null) {
+            return;
+        }
+
+        for (var i=0; i<markedProblems.length; i++) {
+            var target_div=document.getElementById("problems_links");
+
+            var startDrillLink = document.createElement("a");
+            var textnode = document.createTextNode(markedProblems[i]); 
+            startDrillLink.appendChild(textnode);             
+            startDrillLink.href = markedProblems[i];
+            startDrillLink.setAttribute('class',"page-link");    
+            target_div.appendChild(startDrillLink); 
+            target_div.appendChild(document.createElement("br")); 
+
+
+        }
+}
+addMarkedProblemsLinks();    
+</script>    
+
+<input type="button" class="drill-button" onclick="cleanAllMarkedProblems(); location.reload();" value="Unmark all problems"/>          
+
+    
+<br/><br/><br/>
+    
+    
+    
+    
+
+
+    <h2 >JSON for portion</h2>    
+    <div class="item">
+        <PRE id="json_pre">
+        </PRE>
+    </div>
+<input type="button" class="drill-button" onclick="buildPortionJSON()" value="Callculate JSON"/>     
+<script>
+function buildPortionJSON(){
+        var start ="{\n    \"title\": \"PUT TITLE FOR THE PORTION HERE\",\n    \"shortUrl\": \"PUT YOUR short URL here\",\n    \"urls\": [ \n";
+        var end=    "\n    ]\n}\n";
+        var url_list="";
+        var markedProblems= getAllMarkedProblemUrls();
+        for (var i=0; i<markedProblems.length; i++) {
+            url_list = url_list+"        \"http://knowtheweb.org"+markedProblems[i]+"\",\n";
+        }
+
+        if (url_list.length>2) {
+            url_list = url_list.substring(0, url_list.length-2);
+        }
+    
+    document.getElementById("json_pre").innerHTML=start+url_list+end;
+    
+}
+buildPortionJSON();
+</script>
+
+    <br/>
+    <br/>
+    
+</div>

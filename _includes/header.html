@@ -1,3 +1,23 @@
+
+<style>  <!-- topic style -->
+.topic-heading{
+        font-size: 24px;
+        font-weight: bold; 
+        margin-bottom: 20px; 
+    }
+    
+
+.topic-problem-link{
+    display: block;
+    font-size: 24px;
+    }
+.topic-problem-complexity{
+    display: block;
+    font-size: 12px; 
+    }
+</style>
+
+
 <header class="site-header">
     
 <!-- Google analytics --- start -->    
@@ -50,7 +70,19 @@
         
     </script>  
           
-          
+    <script>
+        if (isMarkedProblems()) {
+             //
+            var startDrillLink = document.createElement("a");
+            var textnode = document.createTextNode("Marked"); 
+            startDrillLink.appendChild(textnode);             
+            startDrillLink.title = "Click here to view / manage you marked problems";
+            startDrillLink.href = "/index-marked.html";
+            startDrillLink.setAttribute('class',"page-link");    
+            document.getElementById("main_menu").appendChild(startDrillLink);      
+        } 
+        
+    </script>            
       </div>
     </nav>
 

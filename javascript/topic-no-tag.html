@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: topic
 title: "Problems with no known tag" 
 categories: javascrit_topic 
 permalink: /javascript/no-tag-topic.html
@@ -14,7 +14,9 @@ permalink: /javascript/no-tag-topic.html
   {% else %}
     <div class="item">
         <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>; categories: [<b>{{page.categories}}</b>] </p>
+        <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>; categories: [<b>{{page.categories}}</b>] 
+            <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
+        </p>
         <p>{{page.header}}</p>
         <hr/>
     </div>
@@ -23,4 +25,3 @@ permalink: /javascript/no-tag-topic.html
     
     
 </div>
-

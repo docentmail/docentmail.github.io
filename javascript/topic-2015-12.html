@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: topic
 title: "Problems added in December 2015 " 
 categories: javascrit_daterange 
 permalink: /javascript/topic-2015-12.html
@@ -15,7 +15,9 @@ permalink: /javascript/topic-2015-12.html
     {% if page.categories contains 'javascript' and page.title > 'Problem 2015-12-01-00-00' and page.title < 'Problem 2015-12-99-99-99'%}
     <div class="item">
         <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <p class="topic-problem-complexity">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+        <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  
+            <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
+        </p>
         <p>{{page.header}}</p>
         <hr/>
     </div>

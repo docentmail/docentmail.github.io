@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+  
+<script>
+function addMarkingButton(probUrl){
+    var preffId="mark_problem_p_"; // unique p id is "mark_problem_p_"+probUrl
+    var isMarked=isProblemMarked(probUrl);    
+    var markButton = document.createElement("input");
+    markButton.value=isMarked? "Un-Mark": "Mark";
+    markButton.setAttribute('id',"mark_button_"+probUrl);
+    markButton.setAttribute('type',"button");
+    markButton.setAttribute('class',"drill-button");                   
+    markButton.setAttribute('onclick',"doMarkingButtinClick('"+probUrl+"','mark_button_"+probUrl+"')");
+    document.getElementById("mark_problem_p_"+probUrl).appendChild(markButton);    
+}
+                
+function doMarkingButtinClick(probUrl,buttonId){
+    var button= document.getElementById(buttonId);
+    if (button.value == "Mark") {
+      markProblem(probUrl);
+      button.value = "Un-Mark";
+          
+    } else {
+      unMarkProblem(probUrl);
+      button.value = "Mark";
+    }
+}
+    
+</script>    
+      
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

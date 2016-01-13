@@ -30,7 +30,7 @@ function isTodoDrill(){
 function isUrlInDrillTodo_u(parUrl){
     var stor=window.localStorage;    
     var drill_problems_string =stor.getItem("drill_problems");
-    if (typeof drill_problems_string == undefined) {
+    if (drill_problems_string ==  null || typeof drill_problems_string == undefined) {
         return false;
     }
     
@@ -72,6 +72,10 @@ function removeDomainFromUrl(theUrl){
 **/
 function getNextUrlToDrill(){
    var stor=window.localStorage;  
+    
+   if (drill_problems_string ==  null || typeof drill_problems_string == undefined) {
+        return null;
+    }    
    
    var drill_problems = JSON.parse( stor.getItem("drill_problems"));
     if (drill_problems.keys_todo.length == 0) {
@@ -162,7 +166,7 @@ function getDrillProblemKeyByUrl_u(parUrl){
 *  finds key in WebStorage for current window url
 **/
 function getDrillProblemKeyByUrl(){
-    getDrillProblemKeyByUrl_u(window.location.pathname)
+    getDrillProblemKeyByUrl_u(window.location.pathname);
 }
 
 /**
@@ -251,12 +255,20 @@ function displayNumbers(){
 /******************************************************************************************
 marked problems
 ******************************************************************************************/
-function markProblem(){
-    markProblem_u(window.location.pathname);
+function markCurrentProblem(){
+    markProblem(window.location.pathname);
 }
 
-/*
-function markProblem_u(parUrl){
+/**
+*   see markProblem(parUrl)+ reload page
+**/
+function markCurrentProblem_reload(){
+    markCurrentProblem();
+    location.reload();
+}
+
+
+function markProblem(parUrl){
   var urlToMark = removeDomainFromUrl(parUrl);
     
   var stor=window.localStorage;  
@@ -271,46 +283,120 @@ function markProblem_u(parUrl){
       }
       marked_problems.push(urlToMark);
   }
-  stor.setItem("marked_problems", );    
+  stor.setItem("marked_problems", JSON.stringify(marked_problems) );    
      
-     
-     
-  var 
-    ++++++++++++++++++++++
-    var problemKey= getDrillProblemKeyByUrl_u(urlParam);
+//        window.location = getNextUrlToDrill();
     
-    
-    
-    
-    
-    if (problemKey != null) {
-        var index = drill_problems.keys_todo.indexOf(problemKey);   
-        if (index !== -1) {
-            drill_problems.keys_todo.splice(index, 1);
-        }
+}
 
-        var index = drill_problems.keys_done.indexOf(problemKey);   
-        if (index == -1) {
-            drill_problems.keys_done.push(problemKey);
-        }
+/**
+* returns array with marked problems URL
+* returns null if there is no "marked_problems" item in storage
+**/
+function getAllMarkedProblemUrls(){
+    
+  var stor=window.localStorage;  
+  var marked_problems_str=stor.getItem("marked_problems");
+  if (marked_problems_str == null) {
+      return null;
+  } 
+  return JSON.parse( marked_problems_str );        
+}
+/**
+* returns true if there is marked problems
+* false otherwise
+**/
+function isMarkedProblems(){
+    var stor=window.localStorage;    
+    var marked_problems_string =stor.getItem("marked_problems");
+    if ( marked_problems_string == null || typeof marked_problems_string == undefined) {
+        return false;
+    } 
+    return true;
+}
+
+
+/**
+* returns true if current problem is marked
+* false otherwise
+**/
+function isCurrentProblemMarked(){
+    return isProblemMarked(window.location.pathname);
+}
+
+
+/**
+* returns true if problem with URL is marked
+* false otherwise
+**/
+
+function isProblemMarked(parUrl){
+    var urlToCheck = removeDomainFromUrl(parUrl);
+    
+    var stor=window.localStorage;    
+    var marked_problems_string =stor.getItem("marked_problems");
+    if ( marked_problems_string == null || typeof marked_problems_string == undefined) {
+        return false;
+    } 
+    
+    var marked_problems = JSON.parse(marked_problems_string);
+    for (var i=0; i< marked_problems.length; i++) {
+          if (marked_problems[i] == urlToCheck) { return true; }
     }
-    stor.setItem("drill_problems", JSON.stringify(drill_problems) );     ?????????????????????????????????
-    
-    var nextProblem= getNextUrlToDrill();
-    if (nextProblem ==null) {
-        alert("Congrats! you are done with drill");
-        window.location = "/";
-    } else {
-        window.location = getNextUrlToDrill();
-    }    
-    
+    return false;
 }
 
-*/
-function unMarkProblem(){
+/**
+*   see unMarkProblem(parUrl)+ reload page
+**/
+function unMarkCurrentProblem_reload(){
+    unMarkCurrentProblem();
+    location.reload();
 }
 
+
+/**
+*   see unMarkProblem(parUrl)
+**/
+function unMarkCurrentProblem(){
+    unMarkProblem(window.location.pathname);
+}
+
+/**
+*   returns true if the problem was removed
+*   false otherwise - usually case when problem was not in list 
+**/
+function unMarkProblem(parUrl){    
+  var urlToMark = removeDomainFromUrl(parUrl);
+    
+  var stor=window.localStorage;  
+  var marked_problems_str=stor.getItem("marked_problems");
+  var marked_problems;    
+  if (marked_problems_str == null) {
+      return false;
+  } 
+  marked_problems = JSON.parse( marked_problems_str);    
+  for (var i=0; i< marked_problems.length; i++) {
+      if (marked_problems[i] == urlToMark) { 
+          marked_problems.splice(i,1);
+          if (marked_problems.length == 0) {
+            stor.removeItem("marked_problems");
+          } else {
+            stor.setItem("marked_problems", JSON.stringify(marked_problems) );    
+          }
+          return true; 
+      }
+  }
+
+  return false; 
+}
+
+/**
+* removes all marked_problems
+**/
 function cleanAllMarkedProblems(){
+  var stor=window.localStorage;  
+  stor.removeItem("marked_problems");
 }
 
 
