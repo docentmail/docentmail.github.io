@@ -72,12 +72,12 @@ function removeDomainFromUrl(theUrl){
 **/
 function getNextUrlToDrill(){
    var stor=window.localStorage;  
-    
+   var drill_problems_string =stor.getItem("drill_problems");    
    if (drill_problems_string ==  null || typeof drill_problems_string == undefined) {
         return null;
     }    
    
-   var drill_problems = JSON.parse( stor.getItem("drill_problems"));
+   var drill_problems = JSON.parse( drill_problems_string);
     if (drill_problems.keys_todo.length == 0) {
       return null;
     }    
