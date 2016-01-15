@@ -28,6 +28,17 @@ var x = 123;
 var y = new Number(123);
 {% endhighlight %}
     
+  <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+       
+    <br/>    
+    
+
+        
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
         <p><b>Tip:</b>  Value of variable <b>x</b>  is a primitive, but value of variable <b>y</b> is not. 
@@ -37,7 +48,7 @@ var y = new Number(123);
     <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
     <div id="answer" style="display: none">
     
-                <p><b>Answer: Literal here is  </b>5<br/>.
+                <p><b>Answer: </b>
 {% highlight js %}
 typeof x;  // "number"
 typeof y;  // "object"
