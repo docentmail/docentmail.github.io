@@ -1,0 +1,85 @@
+---
+layout: problem
+title: Problem 2016-01-14-18-21
+permalink: /javascript/problem/2016-01-14-18-21.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> Which of the names of variables are correct?</p>
+
+complexity: 2
+importance: 5
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Division to "Apple"</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Which of the names of variables are correct?</p>  
+<ol>
+  <li><b>2things</b></li>
+  <li><b>something4you</b></li>
+  <li><b>my_variable_name</b></li>    
+  <li><b>aaa+bbb</b></li>
+  <li><b>variable!</b></li>
+  <li><b>#vvv</b></li>    
+  <li><b>myVariableName</b></li>
+  <li><b>MyVariableName</b></li>
+  <li><b>_uuu</b></li>
+  <li><b>uuu_uuu</b></li>
+  <li><b>ddd8kjh</b></li>    
+  <li><b>else</b></li>
+  <li><b>MY_VARIABLE_NAME</b></li>
+  <li><b>$item</b></li>    
+</ol>
+    
+    
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Try to recall rules for JavaScript variables rules</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Green is good</p>   
+<ol>
+  <li style="color:red"><b>2things</b> - starts from digit</li>
+  <li style="color:green"><b>something4you</b> - valid usage digit </li>
+  <li style="color:green"><b>my_variable_name</b> - underscore style</li>    
+  <li style="color:red"><b>aaa+bbb</b>   - "+" is used </li>
+  <li style="color:red"><b>variable!</b>   - "!" is used </li>
+  <li style="color:red"><b>#vvv</b>  - "#" is used </li>    
+  <li style="color:green"><b>myVariableName</b>  - camel style (good practice to lowercase for first letter)</li>
+  <li style="color:green"><b>MyVariableName</b>  - valid but bad practice to uppercase for first letter</li>
+  <li style="color:green"><b>_uuu</b></li>
+  <li style="color:green"><b>uuu_uuu</b></li>
+  <li style="color:green"><b>ddd8kjh</b></li>    
+  <li style="color:red"><b>else</b>   - reserved word is used</li>
+  <li style="color:green"><b>MY_VARIABLE_NAME</b> - valid but starts from uppercase (bad practice) and all uppercase style is recomended to use for <b>constants</b></li>
+  <li style="color:green"><b>$item</b> - Hungarian notation. Usually using by jQuery</li>        
+</ol>
+        
+        <p>  
+            Read it for details:<br/>
+            <a target="_blank"  href="http://www.codelifter.com/main/tips/tip_020.shtml">Variables names on www.codelifter.com</a> <br/>   
+            <a target="_blank"  href="https://msdn.microsoft.com/en-us/library/67defydd(v=vs.94).aspx">Variables on msdn.microsoft.com</a> <br/>   
+            <a target="_blank"  href="https://msdn.microsoft.com/en-us/library/0779sbks(v=vs.94).aspx">JavaScript reserved words on msdn.microsoft.com</a> <br/>                         <a target="_blank"  href="https://mothereff.in/js-variables">Verify variable name online</a> <br/>      
+        </p>
+    </div>
+</div>

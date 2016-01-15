@@ -1,0 +1,79 @@
+---
+layout: problem
+title: Problem 2016-01-14-17-38
+permalink: /javascript/problem/2016-01-14-17-38.html
+categories: javascript, other
+header: |
+ <p><b>Question:</b> Give sample of JavaScript <b> code block</b></p>
+
+complexity: 1
+importance: 7
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">JavaScript Code Blocks</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Give sample of JavaScript <b> code block</b></p>  
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Statements grouped with curly braces <b>{...}</b>.</p>   
+{% highlight js %}
+{
+        x=1;
+        x++;
+}
+{% endhighlight %}        
+
+Sample of using of code block in <b>if</b>
+{% highlight js %}
+if (a<1) {
+        x=1;
+        x++;
+}
+{% endhighlight %}        
+
+        <p>  
+            Read it for details:<br/>
+            <a target="_blank"  href="http://www.scriptingmaster.com/javascript/code-blocks-javascript.asp">code block on www.scriptingmaster.com </a> <br/>      
+            <a target="_blank"  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block">code block on developer.mozilla.org</a> 
+        </p>
+         
+        
+        <p><b>To think:</b> Here is sample of usage code block with labels. What would be alerted by the code fragment below?</p>
+{% highlight js %}
+var arr=[1,2,3,4];
+var rez=0;    
+theLabel:
+{
+    for(var i=0; i<arr.length; i++) {
+        rez=i;
+        if (i==3) { break theLabel;}
+    }
+    rez=1000;                           
+}    
+alert(rez);                               
+{% endhighlight %}        
+    
+        <p>  
+            Read it for details:<br/>
+            <a target="_blank"  href="http://stackoverflow.com/questions/8735841/whats-the-purpose-of-lonely-code-blocks-in-javascript">Read the post on stackoverflow.com for explanation</a>
+        </p>
+        
+        
+    </div>
+</div>

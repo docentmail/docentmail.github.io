@@ -1,0 +1,48 @@
+---
+layout: problem
+title: Problem 2016-01-14-18-07
+permalink: /javascript/problem/2016-01-14-18-07.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> Name main parts (ot aspect) of variable</p>
+
+complexity: 2
+importance: 4
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Parts of variable</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Name main parts (ot aspect) of variable</p> 
+
+
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Look at code fragment underneath
+{% highlight js %}
+var x = 100;
+{% endhighlight %}
+
+        </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b>  Each variable has name and value. For the variable from the sample above <b>x</b> is the variable name and <b>100</b> is the variable value.</p>   
+        
+        <p>  
+            Read it for details:<br/>
+            <a target="_blank"  href="https://msdn.microsoft.com/en-us/library/67defydd(v=vs.94).aspx">variables on msdn.microsoft.com</a>
+        </p>
+    </div>
+</div>
