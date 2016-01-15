@@ -1,0 +1,28 @@
+---
+layout: topic
+title: "Problems added in January 2016 " 
+categories: javascrit_daterange 
+permalink: /javascript/topic-2016-01.html
+---
+
+
+<div class="home">
+ <h1 class="topic-heading">JavaScript: Problems added in January 2016 </h1>
+
+<hr/>
+{% assign sorted_pages = site.pages | sort: "title" %}
+{% for page in sorted_pages reversed %}
+    {% if page.categories contains 'javascript' and page.title > 'Problem 2016-01-01-00-00' and page.title < 'Problem 2016-01-99-99-99'%}
+    <div class="item">
+        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  
+            <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
+        </p>
+        <p>{{page.header}}</p>
+        <hr/>
+    </div>
+  {% endif %}
+{% endfor %}    
+    
+    
+</div>
