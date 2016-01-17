@@ -1,0 +1,71 @@
+---
+layout: problem
+title: Problem 2016-01-16-19-43
+permalink: /javascript/problem/2016-01-16-19-43.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> Give the code snippet that declares variable <b>aVar</b> with value 10 in <b>Global</b> scope </p>
+
+complexity: 2
+importance: 8
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Javascript Variable Scope.</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Give the code snippet that declares variable <b>aVar</b> with value 10 in <b>Global</b> scope </p>  
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b> There are two types of scope in JavaScript: Global and local for functions </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> <br/>   
+this declaration out of the any function:            
+{% highlight js %}
+var aVar=10;
+{% endhighlight %}
+or  aVar would be in Global scope if it was mentioned first time in the statement:
+{% highlight js %}
+function aFun(){
+	aVar=10;
+}
+{% endhighlight %}
+
+but not this ( variable <b>aVar</b> declared not in Global scope but in scope of function <b>aFun</b>) 
+{% highlight js %}
+function aFun(){
+	var aVar=10;
+}
+{% endhighlight %}
+
+</p>
+        
+    </div>
+
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="/javascript/tutorial/variable-scope.html">Webculum "Javascript Variable Scope" tutorial</a> 
+        </p>
+
+
+</div>

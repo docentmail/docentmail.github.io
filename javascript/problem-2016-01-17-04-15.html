@@ -1,0 +1,93 @@
+---
+layout: problem
+title: Problem 2016-01-17-04-15
+permalink: /javascript/problem/2016-01-17-04-15.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> What would be result of execution of the snippet?</p>
+ <PRE>
+ function myFunction(){
+   alert("Hello from myFunction ");
+ }
+ 
+ function testFunctionHoisting(){
+    alert(typeof myFunction);
+     
+    myFunction();  
+
+    var myFunction = function() {
+        alert("hello from local myFunction");  
+    };
+ }
+ testFunctionHoisting();
+ </PRE>      
+
+complexity: 5
+importance: 4
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Hoisting behavior</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> What would be result of execution of the snippet?</p>  
+{% highlight js %}
+function myFunction(){
+   alert("Hello from myFunction ");
+}
+ 
+function testFunctionHoisting(){
+    alert(typeof myFunction);
+     
+    myFunction();  
+
+    var myFunction = function() {
+        alert("hello from local myFunction");  
+    };
+}
+testFunctionHoisting();
+{% endhighlight %}
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Inner myFunction is the variable. Recall the hoisting behavior for variables.</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> <br/>
+<ul>
+  <li>first alert <b>alert(typeof myFunction);</b> shows message <b>undefined</b> because local <b>myFunction</b> variable according hoisting behavior has value "undefined".
+    </li>
+  <li>Call <b> myFunction(); </b> throws error <b>Fix errors in you script: TypeError: myFunction is not a function</b> because value of local <b>myFunction</b> variable is "undefined" and it is not function.
+    </li>
+</ul>            
+
+        
+        </p>   
+        
+    </div>
+    
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="/javascript/tutorial/hoisting.html">webculum's tutorial: Hoisting behavior</a> 
+        </p>
+
+    
+</div>

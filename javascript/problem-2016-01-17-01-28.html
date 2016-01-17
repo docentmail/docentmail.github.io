@@ -1,0 +1,70 @@
+---
+layout: problem
+title: Problem 2016-01-17-01-28
+permalink: /javascript/problem/2016-01-17-01-28.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> What would be result of execution of the snippet?</p>
+ <PRE>
+ var theVar="value0";     
+ for (var i=0; i<10; i++) { 
+      var theVar="value1";
+ }
+
+ alert(theVar);
+ </PRE>      
+
+complexity: 2
+importance: 8
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Javascript Variable Scope.</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b>  What would be result of execution of the snippet?</p>  
+{% highlight js %}
+for (var i=0; i<10; i++) { 
+      var theVar="value1";
+}
+
+alert(theVar);
+{% endhighlight %}
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Is this code block function?</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Alert with text <b>value1</b><br/>
+because of:<br/>            
+Code block (grouped statements with curly braces { ... } ) created by if, for, while, switch and other statements does not define a new scope. Only function has it's own scope.
+        
+        </p>   
+    </div>
+
+
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="/javascript/tutorial/variable-scope.html">Webculum "Javascript Variable Scope" tutorial</a> 
+        </p>
+    
+</div>

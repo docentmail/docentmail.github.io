@@ -1,0 +1,82 @@
+---
+layout: problem
+title: Problem 2015-12-18-17-25
+permalink: /javascript/problem/2015-12-18-17-25.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> What would be result of execution of the snippet?</p>
+ <PRE>
+ var theVar = 'value0'; 
+  
+ function func1() { 
+ var theVar="value1";
+   function func2() { 
+      alert(theVar);
+   }
+   func2();
+ }
+ func1();
+ </PRE>      
+
+complexity: 2
+importance: 8
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Javascript Variable Scope.</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b>  What would be result of execution of the snippet?</p>  
+{% highlight js %}
+var theVar = 'value1'; 
+  
+function func1() { 
+var theVar="value1";
+   function func2() { 
+      alert(theVar);
+   }
+   func2();
+}
+
+func1();
+{% endhighlight %}
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  What about local scope for function? </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Alert with text <b>value1</b><br/>
+because of:<br/>            
+value1 - belongs to Global scope.<br/>
+value2 - belongs to scope of function func1.<br/>
+Scope of the func2 inherit scope of func1.<br/> 
+        
+        </p>   
+    </div>
+
+
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="/javascript/tutorial/variable-scope.html">Webculum "Javascript Variable Scope" tutorial</a> 
+        </p>
+    
+</div>
