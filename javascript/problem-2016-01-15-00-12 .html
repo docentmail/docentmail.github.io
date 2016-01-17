@@ -1,0 +1,55 @@
+---
+layout: problem
+title: Problem 2016-01-15-00-12
+permalink: /javascript/problem/2016-01-15-00-12.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> Give the code snippet to declare (or define) variable <b>myVar</b> but not initialize it. What is value of the variable? </p>
+    
+
+complexity: 1
+importance: 4
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">definition vs. initialization</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Give the code snippet to declare (or define) variable <b>myVar</b> but not initialize it. What is value of the variable? </p>  
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  JavasScript has special value for non-initialized variables.</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> value of myVar is <b>undefined</b>.
+{% highlight js %}
+var myVar;
+{% endhighlight %}    
+        </p>   
+    </div>
+    <br/>
+    <p>  
+        <b>Read it for details:</b><br/>
+        <a target="_blank"  href="http://stackoverflow.com/questions/9452909/definition-vs-initialization">definition vs. initialization  on stackoverflow.com</a> 
+    </p>
+
+</div>

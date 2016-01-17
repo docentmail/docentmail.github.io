@@ -1,0 +1,94 @@
+---
+layout: problem
+title: Problem 2016-01-14-23-45
+permalink: /javascript/problem/2016-01-14-23-45.html
+categories: javascript, general
+header: |
+ <p><b>Question:</b> Name reserved keywords of JavaScript </p>
+
+complexity: 2
+importance: 5
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Reserved keywords </h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Name reserved keywords of JavaScript</p>  
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  function, var, if ... Continue the list.<br/>
+            Try this:
+{% highlight js %}
+var if = 100;
+{% endhighlight %}            
+        
+        </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Look at the list:
+<PRE>
+break
+case
+class
+catch
+const
+continue
+debugger
+default
+delete
+do
+else
+export
+extends
+finally
+for
+function
+if
+import
+in
+instanceof
+new
+return
+super
+switch
+this
+throw
+try
+typeof
+var
+void
+while
+with
+yield        
+</PRE>        
+        </p>   
+        
+        <p><b>Explanation:</b> You need to know Reserved keywords because the could not be used as names for the variables</p>
+    </div>
+    <br/>
+    <p>  
+        <b>Read it for details:</b><br/>
+        <a target="_blank"  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Keywords">Keywords on developer.mozilla.org</a> <br/>   
+        <a target="_blank"  href="http://www.javascripter.net/faq/reserved.htm">Reserved words in JavaScript on www.javascripter.net</a> <br/>      
+        <a target="_blank"  href="https://mathiasbynens.be/notes/reserved-keywords">Reserved words in JavaScript - a lot of details</a>
+    </p>
+    
+</div>

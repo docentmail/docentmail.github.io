@@ -1,0 +1,63 @@
+---
+layout: problem
+title: Problem 2016-01-15-00-26
+permalink: /javascript/problem/2016-01-15-00-26.html
+categories: javascript, variables
+header: |
+ <p><b>Question:</b> Give code snippets with assignment operators.</p>
+
+complexity: 2
+importance: 5
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">assignment operators</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Give code snippets with assignment operators.</p>  
+
+
+    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+    <div id="eval" style="display: none">
+            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+            <br/>    
+            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+    </div>        
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Simplest one is <b>=</b>
+{% highlight js %}
+x = 100;
+{% endhighlight %}
+        
+        </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> Here are some samples:   
+{% highlight js %}
+x = 100;
+y=2;        
+x +=y;
+x *= y
+x %= y        
+{% endhighlight %}
+        </p>            
+        
+    </div>
+    <br/>
+    <p>  
+        <b>Read it for details:</b><br/>
+        <a target="_blank"  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Assignment_Operators">Assignment operators on developer.mozilla.org</a>
+
+</div>
