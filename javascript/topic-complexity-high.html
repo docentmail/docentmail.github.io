@@ -1,7 +1,8 @@
 ---
+pagerole: (topic)
 layout: topic
 title: "Problems with high (8-10) complexity " 
-categories: javascrit_complexity 
+categories: (javascript)
 permalink: /javascript/topic-complexity-high.html
 ---
 
@@ -10,16 +11,18 @@ permalink: /javascript/topic-complexity-high.html
 
 {% assign sorted_pages = site.pages | sort: 'complexity' %}
 {% for page in sorted_pages reversed %}
-  {% if page.categories contains 'javascript' and page.complexity > 7 %}
-    <div class="item">
-        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  
-            <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
-        </p>
-        <p>{{page.header}}</p>
-        <hr/>
-    </div>
-  {% endif %}
+    {% if page.pagerole contains 'problem' %}        
+        {% if page.categories contains 'javascript' and page.complexity > 7 %}
+        <div class="item">
+            <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  
+                <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
+            </p>
+            <p>{{page.header}}</p>
+            <hr/>
+        </div>
+        {% endif %}
+    {% endif %}    
 {% endfor %}    
     
     

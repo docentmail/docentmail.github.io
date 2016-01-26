@@ -1,7 +1,8 @@
 ---
+pagerole: (topic),(subject)
 layout: topic
 title: "Problems with no known tag" 
-categories: javascrit_topic 
+categories: (javascript)
 permalink: /javascript/no-tag-topic.html
 ---
 
@@ -10,17 +11,23 @@ permalink: /javascript/no-tag-topic.html
 
 {% assign sorted_pages = site.pages | sort: 'importance/complexity' %}
 {% for page in sorted_pages reversed %}
-    {% if (page.categories == 'blank' or page.categories == nil or page.categories == 'javascript' or page.categories == 'javascrit_importance' or page.categories == 'javascrit_topic' or page.categories == 'javascrit_complexity' or page.categories == 'javascrit_daterange' or page.categories == 'headlink' or page.categories == 'javascript-todo-problem') or (page.categories contains 'javascript' and (page.categories contains 'variables' or page.categories contains 'other' or page.categories contains 'flow-control' or page.categories contains 'loops-and-iterations')) %}
-  {% else %}
-    <div class="item">
-        <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-        <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>; categories: [<b>{{page.categories}}</b>] 
-            <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
-        </p>
-        <p>{{page.header}}</p>
-        <hr/>
-    </div>
-  {% endif %}        
+    {% if page.pagerole contains 'problem' %}        
+    
+        {% if page.categories contains 'javascript' and (page.categories contains 'variables' or page.categories contains 'other' or page.categories contains 'flow-control' or page.categories contains 'loops-and-iterations') %}
+      {% else %}
+        {% if page.categories contains 'javascript' %}
+            <div class="item">
+                <a class="topic-problem-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                <p class="topic-problem-complexity"  id="mark_problem_p_{{ page.url | prepend: site.baseurl }}">complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>; categories: <b>{{page.categories}}</b>
+                    <script> addMarkingButton("{{ page.url | prepend: site.baseurl }}"); </script>
+                </p>
+                <p>{{page.header}}</p>
+                <hr/>
+            </div>
+        {% endif %}    
+    
+      {% endif %}        
+  {% endif %}            
 {% endfor %}    
     
     

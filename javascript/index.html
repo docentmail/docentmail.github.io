@@ -33,26 +33,31 @@ layout: default
     <br/>
 
     <h2 >Problems grouped by date adding on site</h2>    
+{% assign sorted_pages = site.pages | sort: "permalink" %}
+{% for page in sorted_pages reversed  %}
+    {%  if page.categories contains '(javascript)'  and page.pagerole contains '(topic)' and page.pagerole contains '(date)' %}   
     <div class="item">
-        <a href="/javascript/topic-2016-01.html">Problems added in January 2016 (in progress)</a>
-    </div>    
-    <div class="item">
-        <a href="/javascript/topic-2015-12.html">Problems added in December 2015 (33 problems) </a>
-    </div>    
+        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+    </div>
+    {% endif %} 
+{% endfor %}    
+
     
     <br/>
     
     
-  <h2 >Topics grouped by subject</h2>    
+  <h2 >Problems grouped by subject</h2>    
 
-{% for page in site.pages %}
-  {% if page.categories contains 'javascrit_topic' %}
+{% assign sorted_pages = site.pages | sort: "title" %}
+{% for page in sorted_pages %}
+  {% if page.categories contains '(javascript)' and page.pagerole contains '(topic)' and page.pagerole contains '(subject)' %}
     <div class="item">
         <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
     </div>
   {% endif %}
 {% endfor %}    
-
+  
+    
     <br/>
     <br/>
     

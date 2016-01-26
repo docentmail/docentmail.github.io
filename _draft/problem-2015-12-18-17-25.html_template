@@ -8,6 +8,7 @@
 # - Date and time should be the same as it is in the name of the problem file (see fields "title", "permalink".  
 # ****************************************************************************
 # NOTE: start of the file header.  This is YAML format. Please look here ?????? to be familiar with it.
+pagerole: problem # NOTE: don't change this line
 layout: problem # NOTE: don't change this line
 title: Problem 2015-12-18-17-25 # NOTE: put actual date and time here.
 permalink: /javascript/problem/2015-12-18-17-25.html # NOTE: put actual date and time here. Google "permalink" to understand purpose of the field
