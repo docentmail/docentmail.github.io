@@ -3,7 +3,7 @@ pagerole: (problem)
 layout: problem
 title: Problem 2015-12-31-23-01
 permalink: /javascript/problem/2015-12-31-23-01.html
-categories: (javascript),(general)
+categories: (javascript), (868ea026-a188-404d-914f-1a86bc090929) # variables
 header: |   
  <p><b>Question:</b> What world be result for each line?</p>
  <PRE>
@@ -23,9 +23,6 @@ author: docentmail
 
 <div class="home">
     <h1 class="post-title">Comment usage ({{page.title}})</h1>
-  <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
-    
-    <hr/>
     <p><b>Question:</b> What world be result for each line? </p>
 {% highlight js %}
 typeof "John";
@@ -34,19 +31,6 @@ typeof false;
 typeof [1,2,3,4];
 typeof {name:'John', age:34};
 {% endhighlight %}    
-
-    
-       
-    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
-    <div id="eval" style="display: none">
-            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
-            <br/>    
-            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
-    </div>        
-    
-    <br/>
-
-  
     
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">

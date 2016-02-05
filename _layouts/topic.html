@@ -18,9 +18,11 @@ function addMarkingButton(probUrl){
     markButton.setAttribute('type',"button");
     markButton.setAttribute('class',"drill-button");                   
     markButton.setAttribute('onclick',"doMarkingButtinClick('"+probUrl+"','mark_button_"+probUrl+"')");
-    document.getElementById("mark_problem_p_"+probUrl).appendChild(markButton);    
+    document.getElementById(preffId+probUrl).appendChild(markButton);    
 }
-                
+
+
+          
 function doMarkingButtinClick(probUrl,buttonId){
     var button= document.getElementById(buttonId);
     if (button.value == "Mark") {

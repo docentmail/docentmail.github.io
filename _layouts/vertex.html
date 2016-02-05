@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--  vertex layout:
+   vertex is vertex in the information 
+-->
+<html>
+
+  {% include head.html %}
+
+  <body>
+  <script type="text/javascript" src="/vertices/vertex.js"></script>
+  <script type="text/javascript" src="/vertices/problem.js"></script>
+      
+      
+<script>
+    
+</script>    
+      
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+    <div id="hierarhy-navigation" style="text-align: right;">
+        *** hierarhy position here ***
+    </div>   
+    
+<div>
+    
+    
+<p id="problems-for-subject">    
+<script>
+
+// write to the document links to topic's problems
+var numProblemsForVertexWithChildren=getProblemsForTopics(getChildrenForVertexIncluded("{{page.uuid}}")).length;
+var numProblemsForVertexOnly=getProblemsForTopics(["{{page.uuid}}"]).length;
+
+if (numProblemsForVertexOnly > 0){
+    document.write('<a href="/javascript/topic-for-subject.html?subject={{page.uuid}}&allchildren=false">'+
+                   'Problems for this specific subject ('+numProblemsForVertexOnly+')</a>');
+} else {
+    document.write("There is no problem for this specific subject");
+}
+    
+document.write("<br/>");    
+    
+if (numProblemsForVertexWithChildren > 0){
+    document.write('<a href="/javascript/topic-for-subject.html?subject={{page.uuid}}&allchildren=true">'+
+                   'Problems for this subject and its children ('+numProblemsForVertexWithChildren+')</a>');
+} else {
+    document.write("The subject and its children doesn't contain problems yet.");
+}
+    
+</script>          
+</p>    
+</div>
+    <div class="home">
+
+          <h1 >{{page.title}}</h1>
+
+              <h3 >TOC</h3>
+        <pre>{{page.toc}}
+        </pre>
+
+              <h3 >Children vertices.</h3>
+        <div id="childern-verties">
+        There is no child for this subject.
+        </div>
+
+        <hr/>
+        </div>
+
+            {{ content }}
+          </div>
+    </div>
+
+
+    <script>
+    // fill the childern-verties
+        buildDirectChildrenTOC("{{page.uuid}}");
+        getHierarchyForVertex("{{page.uuid}}"); 
+    </script>
+      
+    {% include footer.html %}
+
+  </body>
+
+</html>

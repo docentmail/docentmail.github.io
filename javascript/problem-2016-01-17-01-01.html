@@ -3,7 +3,7 @@ pagerole: (problem)
 layout: problem
 title: Problem 2016-01-17-01-01
 permalink: /javascript/problem/2016-01-17-01-01.html
-categories: (javascript),(variables)
+categories: (javascript),(868ea026-a188-404d-914f-1a86bc090929)   # variables
 header: |
  <p><b>Question:</b> What would be result of execution of the snippet?</p>
  <PRE>
@@ -24,9 +24,7 @@ author: docentmail
 <div class="home">
     <h1 class="post-title">Javascript Variable Scope.</h1>
     <h2>{{page.title}}</h2> 
-    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
-    
-    <hr/>
+
     <p><b>Question:</b>  What would be result of execution of the snippet?</p>  
 {% highlight js %}
 function func1() { 
@@ -38,16 +36,7 @@ func1();
 alert(theVar);
 {% endhighlight %}
 
-
-    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
-    <div id="eval" style="display: none">
-            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
-            <br/>    
-            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
-    </div>        
-
-
-    <br/>
+    
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
         <p><b>Tip:</b>  Pay attention that <b>var</b> is absent. </p>   

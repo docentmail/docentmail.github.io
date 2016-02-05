@@ -3,7 +3,7 @@ pagerole: (problem)
 layout: problem
 title: Problem 2016-01-17-04-15
 permalink: /javascript/problem/2016-01-17-04-15.html
-categories: (javascript),(variables)
+categories: (javascript),(868ea026-a188-404d-914f-1a86bc090929), (b2fde289-5bf0-46be-8438-9b1730299860) # variables # Functions
 header: |
  <p><b>Question:</b> What would be result of execution of the snippet?</p>
  <PRE>
@@ -31,9 +31,7 @@ author: docentmail
 <div class="home">
     <h1 class="post-title">Hoisting behavior</h1>
     <h2>{{page.title}}</h2> 
-    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
-    
-    <hr/>
+
     <p><b>Question:</b> What would be result of execution of the snippet?</p>  
 {% highlight js %}
 function myFunction(){
@@ -52,16 +50,6 @@ function testFunctionHoisting(){
 testFunctionHoisting();
 {% endhighlight %}
 
-
-    <input type="button" class="toggle-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
-    <div id="eval" style="display: none">
-            <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
-            <br/>    
-            <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
-    </div>        
-
-
-    <br/>
     <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
     <div id="tip" style="display: none">
         <p><b>Tip:</b>  Inner myFunction is the variable. Recall the hoisting behavior for variables.</p>   

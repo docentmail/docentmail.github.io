@@ -5,10 +5,6 @@ permalink: /javascript/problem/drill-url-ws.html
 ---
  
 <script>
-    
-function getURLParameter(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
-}
  
     
 var jsonUrl = getURLParameter('jsonurl');

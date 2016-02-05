@@ -8,6 +8,8 @@
   {% include head.html %}
 
   <body>
+      <script type="text/javascript" src="/vertices/vertex.js"></script>
+      <script type="text/javascript" src="/javascript/subjects/problem.js"></script>
         
 
       
@@ -36,6 +38,14 @@
 }
     
 .drill-button{
+    background-color: linen;
+    font-size: 10px;
+    font-weight: normal
+    margin: 2px; 
+}
+ 
+.mark-button{
+    float: right;
     background-color: linen;
     font-size: 10px;
     font-weight: normal
@@ -73,6 +83,41 @@
 
     <div class="page-content">
       <div class="wrapper">
+
+        <p style="text-align:right" id="mark_problem_p_{{page.permalink}}">
+            complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  
+            <br/>    
+
+            <input style="display: none" id="mark_problem_button" type="button" class="mark-button" onclick="markCurrentProblem_reload()" value="Mark problem"/>          
+            <input style="display: none" id="unmark_problem_button" type="button" class="mark-button" onclick="unMarkCurrentProblem_reload()" value="Un-Mark problem"/>       
+            
+            <input type="button" class="mark-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+            <div id="eval" style="display: none">
+                    <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+                    <br/>    
+                    <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+            </div>   
+
+            
+          </p>
+          
+          
+          
+        <script>
+            addHierarchiesToProblem( "{{page.permalink}}", "{{page.categories}}"); 
+        </script>      
+          
+        <!-- mark / unmark ****** start ******** -->  
+        <script>
+            if (isCurrentProblemMarked()) {    
+                document.getElementById("unmark_problem_button").style.display = "block";    
+            } else {
+                document.getElementById("mark_problem_button").style.display = "block";    
+            }
+        </script>  
+        <!-- mark / unmark ****** end ******** -->            
+         <hr/>
+          
         {{ content }}
 
         <div id="DrillDiv" class="drill-div" style="display: none">
@@ -91,15 +136,6 @@
 </script>  
 
           
-    <input style="display: none" id="mark_problem_button" type="button" class="drill-button" onclick="markCurrentProblem_reload()" value="Mark problem"/>          
-    <input style="display: none" id="unmark_problem_button" type="button" class="drill-button" onclick="unMarkCurrentProblem_reload()" value="Un-Mark problem"/>          
-<script>
-    if (isCurrentProblemMarked()) {    
-        document.getElementById("unmark_problem_button").style.display = "block";    
-    } else {
-        document.getElementById("mark_problem_button").style.display = "block";    
-    }
-</script>  
      
           
           
