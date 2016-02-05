@@ -1,0 +1,22 @@
+---
+pagerole: (tutorial_index)
+layout: default
+title: Index of tutorials
+permalink: /javascript/tutorial/index.html
+categories: (javascript)
+---
+
+<div class="home">
+
+  <h1 >JavaScript list of tutorials and collection of the links </h1>
+
+{% assign sorted_pages = site.pages | sort: 'title' %}
+{% for thePage in sorted_pages reversed %}
+    {% if thePage.pagerole contains '(tutorial)' and thePage.categories contains '(javascript)'%}    
+        <div class="item">
+            <a class="topic-problem-link" href="{{ thePage.url | prepend: site.baseurl }}">{{ thePage.title }}</a>
+            <hr/>
+        </div>
+    {% endif %}
+{% endfor %}    
+</div>
