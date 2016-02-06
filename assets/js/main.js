@@ -401,6 +401,153 @@ function cleanAllMarkedProblems(){
 
 
 /******************************************************************************************
+tagged problems
+******************************************************************************************/
+function tagCurrentProblem(){
+    tagProblem(window.location.pathname);
+}
+
+/**
+*   see tagProblem(parUrl)+ reload page
+**/
+function tagCurrentProblem_reload(){
+    tagCurrentProblem();
+    location.reload();
+}
+
+
+function tagProblem(parUrl){
+  var urlToTag = removeDomainFromUrl(parUrl);
+    
+  var stor=window.localStorage;  
+  var tagged_problems_str=stor.getItem("tagged_problems");
+  var tagged_problems;    
+  if (tagged_problems_str == null) {
+      tagged_problems=[parUrl];
+  } else {
+      tagged_problems = JSON.parse( stor.getItem("tagged_problems") );    
+      for (var i=0; i< tagged_problems.length; i++) {
+          if (tagged_problems[i] == urlToTag) { return; }
+      }
+      tagged_problems.push(urlToTag);
+  }
+  stor.setItem("tagged_problems", JSON.stringify(tagged_problems) );    
+     
+//        window.location = getNextUrlToDrill();
+    
+}
+
+/**
+* returns array with tagged problems URL
+* returns null if there is no "tagged_problems" item in storage
+**/
+function getAllTaggedProblemUrls(){
+    
+  var stor=window.localStorage;  
+  var tagged_problems_str=stor.getItem("tagged_problems");
+  if (tagged_problems_str == null) {
+      return null;
+  } 
+  return JSON.parse( tagged_problems_str );        
+}
+/**
+* returns true if there is tagged problems
+* false otherwise
+**/
+function isTaggedProblems(){
+    var stor=window.localStorage;    
+    var tagged_problems_string =stor.getItem("tagged_problems");
+    if ( tagged_problems_string == null || typeof tagged_problems_string == undefined) {
+        return false;
+    } 
+    return true;
+}
+
+
+/**
+* returns true if current problem is tagged
+* false otherwise
+**/
+function isCurrentProblemTagged(){
+    return isProblemTagged(window.location.pathname);
+}
+
+
+/**
+* returns true if problem with URL is tagged
+* false otherwise
+**/
+
+function isProblemTagged(parUrl){
+    var urlToCheck = removeDomainFromUrl(parUrl);
+    
+    var stor=window.localStorage;    
+    var tagged_problems_string =stor.getItem("tagged_problems");
+    if ( tagged_problems_string == null || typeof tagged_problems_string == undefined) {
+        return false;
+    } 
+    
+    var tagged_problems = JSON.parse(tagged_problems_string);
+    for (var i=0; i< tagged_problems.length; i++) {
+          if (tagged_problems[i] == urlToCheck) { return true; }
+    }
+    return false;
+}
+
+/**
+*   see unTagProblem(parUrl)+ reload page
+**/
+function unTagCurrentProblem_reload(){
+    unTagCurrentProblem();
+    location.reload();
+}
+
+
+/**
+*   see unTagProblem(parUrl)
+**/
+function unTagCurrentProblem(){
+    unTagProblem(window.location.pathname);
+}
+
+/**
+*   returns true if the problem was removed
+*   false otherwise - usually case when problem was not in list 
+**/
+function unTagProblem(parUrl){    
+  var urlToTag = removeDomainFromUrl(parUrl);
+    
+  var stor=window.localStorage;  
+  var tagged_problems_str=stor.getItem("tagged_problems");
+  var tagged_problems;    
+  if (tagged_problems_str == null) {
+      return false;
+  } 
+  tagged_problems = JSON.parse( tagged_problems_str);    
+  for (var i=0; i< tagged_problems.length; i++) {
+      if (tagged_problems[i] == urlToTag) { 
+          tagged_problems.splice(i,1);
+          if (tagged_problems.length == 0) {
+            stor.removeItem("tagged_problems");
+          } else {
+            stor.setItem("tagged_problems", JSON.stringify(tagged_problems) );    
+          }
+          return true; 
+      }
+  }
+
+  return false; 
+}
+
+/**
+* removes all tagged_problems
+**/
+function cleanAllTaggedProblems(){
+  var stor=window.localStorage;  
+  stor.removeItem("tagged_problems");
+}
+
+/******************************************************************************************
 common utilities
 ******************************************************************************************/
 

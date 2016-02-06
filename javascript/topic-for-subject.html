@@ -63,6 +63,7 @@ for (var i=0; i<problemsArray.length; i++) {
 document.getElementById("problems").innerHTML=rezHtml;
 
 for (var i=0; i<problemsArray.length; i++) {
+    addTagingButton(problemsArray[i].permalink); 
     addMarkingButton(problemsArray[i].permalink); 
     addHierarchiesToProblem( problemsArray[i].permalink, problemsArray[i].categories);    
 }

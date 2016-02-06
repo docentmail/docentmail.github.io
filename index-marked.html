@@ -6,6 +6,48 @@ permalink: /index-marked.html
 <div class="home">
 
   <h1 >marked problems management screen</h1>
+  Marked only: <span id="marked_only"></span>  &nbsp;&nbsp;&nbsp;
+  Tagged_only:<span id="tagged_only"></span>    &nbsp;&nbsp;&nbsp;
+  Marked and tagged: <span id="tagged_and_marked"></span>         
+    
+  <script>
+function showNumbers(){
+ var marked_only = "?";
+ var tagged_only = "?";
+ var tagged_and_marked = "?";    
+    
+     
+    var storName="tagged_problems";
+    var stor=window.localStorage;
+    if(typeof(stor) == "undefined") {
+        alert("localStorage in your browser is not enabled!");
+    } else {
+        tagged_only=JSON.parse(stor.getItem("tagged_problems")==null?"[]":stor.getItem("tagged_problems"));    
+        marked_only=JSON.parse(stor.getItem("marked_problems")==null?"[]":stor.getItem("marked_problems"));
+        tagged_and_marked=0;
+        for (var i=0; i<tagged_only.length; i++){
+            for (var j=0; j<marked_only.length; j++){
+                if (tagged_only[i] == marked_only[j]){
+                    tagged_and_marked++;
+                }
+            }
+        }
+        tagged_only=JSON.parse(stor.getItem("tagged_problems")==null?"[]":stor.getItem("tagged_problems")).length;    
+        marked_only=JSON.parse(stor.getItem("marked_problems")==null?"[]":stor.getItem("marked_problems")).length;
+
+    }
+    
+    
+    
+    
+    document.getElementById("marked_only").innerHTML=marked_only;
+    document.getElementById("tagged_only").innerHTML=tagged_only;
+    document.getElementById("tagged_and_marked").innerHTML=tagged_and_marked;    
+    
+}
+ showNumbers();     
+  </script>    
+    
     
   <h2 >links to problems </h2>   
   <!-- 
@@ -38,7 +80,16 @@ function addMarkedProblemsLinks(){
 }
 addMarkedProblemsLinks();    
 </script>    
+<input type="button" class="drill-button" onclick="cleanAllTaggedProblems(); location.reload();" value="Untag all problems"/> <br/>
 
+<hr/>
+<textarea id="urls-to-tag"  cols="100" style="margin: 3px; "></textarea>    
+<br/>    
+<input type="button" class="drill-button" onclick="tagProblemsFromUrls();" value="Tag all problems that belong to thiese URL"/> <br/>    
+    
+    
+    
+    
 <input type="button" class="drill-button" onclick="cleanAllMarkedProblems(); location.reload();" value="Unmark all problems"/>          
 
     
@@ -61,6 +112,10 @@ function buildPortionJSON(){
         var end=    "\n    ]\n}\n";
         var url_list="";
         var markedProblems= getAllMarkedProblemUrls();
+        if (markedProblems == null) {
+            document.getElementById("json_pre").innerHTML="there is no marked problems for JSON \n";
+            return;
+        }
         for (var i=0; i<markedProblems.length; i++) {
             url_list = url_list+"        \"http://webculum.org"+markedProblems[i]+"\",\n";
         }
@@ -89,3 +144,111 @@ buildPortionJSON();
     <br/>
     
 </div>
+
+<script>
+// ***************** tagged for all urls logic ********************
+// load all urls
+// get list of the problems
+function tagProblemsFromUrls(){
+    var listUrls = document.getElementById("urls-to-tag").value.split("\n");    
+    if (listUrls.length != 1){
+        alert("because of racing conditions only one Url allowed at the time.");
+        return;
+    }
+    for (var i=0; i< listUrls.length; i++) {
+        loadJSON(addTimestamp(listUrls[i]),
+                 function(data,path) { processJson(data,path); },
+                 function(xhr) { console.error(xhr); }
+        );
+    }
+    location.reload();
+}
+    
+    
+//var jsonUrl = getURLParameter('jsonurl');
+//console.log(jsonUrl);
+//    
+function loadJSON(path, success, error)
+{
+    console.log("loadJSON - start "+path);
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function()
+    {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                if (success)
+                    success(JSON.parse(xhr.responseText), path);
+            } else {
+                if (error)
+                    error(xhr);
+            }
+        }
+    };
+    xhr.open("GET", path, true);
+    xhr.send();
+}
+//    
+//var title, problemsArray;
+//    
+function processJson(data, path){
+    
+    title=data.title;
+    problemsArray=data.urls;
+    fillAray(problemsArray);
+    console.log("loadJSON - end "+path);
+//    showCurrentProblem();
+    
+}
+//    
+//    
+//    
+// populate internal drill storage    
+function fillAray(srcArr){
+    var storName="tagged_problems";
+    var stor=window.localStorage;
+    if(typeof(stor) == "undefined") {
+        alert("localStorage in your browser is not enabled!");
+        return;
+    }
+    // TODO improve array check
+    
+    if (srcArr.length == 0 ) {
+        return;
+    }
+
+    var tagged_problems=stor.getItem(storName);
+    if ( tagged_problems == null ) {
+        tagged_problems=[];
+    } else {
+        tagged_problems=JSON.parse(tagged_problems);
+    }
+    
+    
+    for (var i=0; i<srcArr.length; i++) {
+        var url_to_tag=removeDomainFromUrl(srcArr[i]);
+        if (tagged_problems.indexOf(url_to_tag) == -1) {
+            tagged_problems.push(removeDomainFromUrl(srcArr[i]));
+        }
+    }
+
+    // store problems structures
+    stor.setItem(storName, JSON.stringify(tagged_problems) );
+
+}
+//
+/**
+addds parameter with unique value to url to avoid data caching
+**/
+function addTimestamp(srcUrl){
+    var timeInMs = Date.now();
+    var rezUrl=srcUrl+"?timestamp="+timeInMs;
+    return rezUrl
+}
+//    
+//
+//    
+    
+    
+    
+    
+</script>

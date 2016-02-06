@@ -50,6 +50,7 @@
     font-size: 10px;
     font-weight: normal
     margin: 2px; 
+    margin-left:  10px; 
 }
     
 .drill-button-know{
@@ -91,12 +92,17 @@
             <input style="display: none" id="mark_problem_button" type="button" class="mark-button" onclick="markCurrentProblem_reload()" value="Mark problem"/>          
             <input style="display: none" id="unmark_problem_button" type="button" class="mark-button" onclick="unMarkCurrentProblem_reload()" value="Un-Mark problem"/>       
             
+            <input style="display: none" id="tag_problem_button" type="button" class="mark-button" onclick="tagCurrentProblem_reload()" value="Tag problem"/>          
+            <input style="display: none" id="untag_problem_button" type="button" class="mark-button" onclick="unTagCurrentProblem_reload()" value="Un-Tag problem"/>       
+
             <input type="button" class="mark-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
             <div id="eval" style="display: none">
                     <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
                     <br/>    
                     <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
             </div>   
+          
+
 
             
           </p>
@@ -114,6 +120,12 @@
             } else {
                 document.getElementById("mark_problem_button").style.display = "block";    
             }
+            
+            if (isCurrentProblemTagged()) {    
+                document.getElementById("untag_problem_button").style.display = "block";    
+            } else {
+                document.getElementById("tag_problem_button").style.display = "block";    
+            }    
         </script>  
         <!-- mark / unmark ****** end ******** -->            
          <hr/>

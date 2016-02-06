@@ -34,6 +34,33 @@ function doMarkingButtinClick(probUrl,buttonId){
       button.value = "Mark";
     }
 }
+
+    
+function addTagingButton(probUrl){
+    var preffId="mark_problem_p_"; // unique p id is "mark_problem_p_"+probUrl
+    var isTagged=isProblemTagged(probUrl);    
+    var tagButton = document.createElement("input");
+    tagButton.value=isTagged? "Un-Tag": "Tag";
+    tagButton.setAttribute('id',"tag_button_"+probUrl);
+    tagButton.setAttribute('type',"button");
+    tagButton.setAttribute('class',"drill-button");                   
+    tagButton.setAttribute('onclick',"doTagingButtinClick('"+probUrl+"','tag_button_"+probUrl+"')");
+    document.getElementById(preffId+probUrl).appendChild(tagButton);    
+}
+
+
+          
+function doTagingButtinClick(probUrl,buttonId){
+    var button= document.getElementById(buttonId);
+    if (button.value == "Tag") {
+      tagProblem(probUrl);
+      button.value = "Un-Tag";
+          
+    } else {
+      unTagProblem(probUrl);
+      button.value = "Tag";
+    }
+}
     
 </script>    
       

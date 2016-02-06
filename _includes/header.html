@@ -71,12 +71,12 @@
     </script>  
           
     <script>
-        if (isMarkedProblems()) {
+        if (isMarkedProblems() || isTaggedProblems()) {
              //
             var startDrillLink = document.createElement("a");
-            var textnode = document.createTextNode("Marked"); 
+            var textnode = document.createTextNode("Marked/Tagged"); 
             startDrillLink.appendChild(textnode);             
-            startDrillLink.title = "Click here to view / manage you marked problems";
+            startDrillLink.title = "Click here to view / manage you marked and tagged problems";
             startDrillLink.href = "/index-marked.html";
             startDrillLink.setAttribute('class',"page-link");    
             document.getElementById("main_menu").appendChild(startDrillLink);      
