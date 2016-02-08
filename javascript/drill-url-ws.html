@@ -4,11 +4,35 @@ titleForDrill: Drilling JavaScript <b>Low</b> complxity problems
 permalink: /javascript/problem/drill-url-ws.html
 ---
  
+<div id="loading">
+<h1>loading ...</h1>
+</div>    
+
+
+<div id="loaded" style="display:none">
+    <h1>You are about to start drilling portion of problems</h1>
+    <p>
+    Portion title:  <b><span id="title"></span></b><br/>
+    Portion description: <b><span id="description"></span></b><br/>
+    Portion size: <b><span id="size"></span></b><br/>
+    <input type="button" onclick="showCurrentProblem()" value="Start drilling" style=" background-color: green; margin: 3px; font-size: 20px; font-weight: normal "/>
+    </p>
+</div>
+
 <script>
  
     
 var jsonUrl = getURLParameter('jsonurl');
 console.log(jsonUrl);
+
+function presentPortionInfo(data){
+    document.getElementById("loading").style="display:none";
+    document.getElementById("loaded").style="display:block";
+    document.getElementById("size").innerHTML=data.urls.length;
+    document.getElementById("title").innerHTML= (data.title == null ? "": data.title);
+    document.getElementById("description").innerHTML=(data.description == null ? "": data.description);
+}
+
     
 function loadJSON(path, success, error)
 {
@@ -38,19 +62,11 @@ function processJson(data){
     problemsArray=data.urls;
     fillAray(problemsArray);
     console.log("after fillArray");
-    showCurrentProblem();
-//    var theobj = JSON.parse(data);
-//    title = theobj.title;
-//    alert(title);
-//    problemsArray= theobj['urls'];               
-//alert(title);
-//alert(problemsArray.length);
-//alert(problemsArray[0]);
-
-    
+    presentPortionInfo(data);
+//    showCurrentProblem();
     
 }
-    
+
     
     
 // populate internal drill storage    
