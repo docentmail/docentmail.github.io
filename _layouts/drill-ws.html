@@ -3,16 +3,19 @@
 <html>
 
   {% include head.html %}
+
 <style>
-.drill-button{
-    background-color: linen;
-    font-size: 14px;
-    font-weight: bold; 
+.start-drill-button{
+    background-color: green; 
     margin: 3px; 
+    font-size: 20px; 
+    font-weight: normal    
 }
 </style>
 
 <body>
+    
+{% include header.html %}    
 <script>
 var problemUrls = [];
 var showCurrentProblem_automaticaly=false; // if JSON comes from external URL page has to wait
@@ -21,7 +24,11 @@ var currentUrlNom=0; // index of current Url in problemUrls array problemUrls
 
 </script>
       
+    <div class="page-content">
+      <div class="wrapper">
         {{ content }}
+      </div>
+    </div>
 
 
 
@@ -36,3 +43,7 @@ if (showCurrentProblem_automaticaly) {
   </body>
 
 </html>
+
+
+
+    
