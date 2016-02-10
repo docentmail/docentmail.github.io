@@ -99,6 +99,21 @@ function getDrillNumbers(){
 }
 
 /**
+*  returns array of the permalinks for todo drilling problems
+**/
+function getDrillTodoPermalinks(){
+   var stor=window.localStorage;  
+
+   var drill_problems = JSON.parse( stor.getItem("drill_problems"));
+   var todoKeys=drill_problems.keys_todo;
+    
+    var permalinks=[];
+    for (var i=0; i<todoKeys.length; i++) {
+        permalinks.push(stor.getItem(todoKeys[i]));
+    }
+    return permalinks;
+}
+/**
 * removes all drilling information from storage and reloading page
 **/
 function cleanDrillData(){

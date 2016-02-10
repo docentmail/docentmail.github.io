@@ -1,0 +1,26 @@
+---
+pagerole: (topic)
+layout: topic
+title: "List of the problems to drill" 
+categories: (javascript)
+permalink: /javascript/topic-for-drill.html
+---
+  <script type="text/javascript" src="/vertices/vertex.js"></script>
+  <script type="text/javascript" src="/javascript/subjects/problem.js"></script>
+  
+
+<h1 class="topic-heading" id="vertex-title">List of problems to drill</h1>
+<div class="home" id=problems>
+</div>
+
+
+<script>
+    
+    
+    
+// populte with the problems
+var problemsArray = getProblemsByPermalinks( getDrillTodoPermalinks() );
+insertProblemList(problemsArray,"problems");    
+
+
+</script>

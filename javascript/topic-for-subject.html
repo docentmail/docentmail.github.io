@@ -2,7 +2,7 @@
 # usage: http://127.0.0.1:4000/javascript/topic-for-subject.html?subject=79eed495-376a-44c4-aee9-7dbe0accf710&allchildren=true
 pagerole: (topic)
 layout: topic
-title: "Variables related problems " 
+title: "List of the problems for specific subject " 
 categories: (javascript)
 permalink: /javascript/topic-for-subject.html
 ---
@@ -45,28 +45,6 @@ document.getElementById("vertex-title").innerHTML=title;
 // populte with the problems
 var problemsArray = getProblemsForTopics(allchildren? getChildrenForVertexIncluded(vertexUUID): [vertexUUID] );
 
-var rezHtml="";
-for (var i=0; i<problemsArray.length; i++) {
-    rezHtml+=
-'        <div class="item">'+
-'            <a class="topic-problem-link" href="'+problemsArray[i].permalink+'">'+problemsArray[i].title+'</a>'+
-'            <p class="topic-problem-complexity"  id="mark_problem_p_'+problemsArray[i].permalink+'">complexity: <b>'+problemsArray[i].complexity+'</b> ;  importance: <b>'+problemsArray[i].importance+'</b>; author: <b>'+problemsArray[i].author+'</b>'+
-'            </p>'+
-'            <p>'+problemsArray[i].header+'</p>'+
-'            <hr/>'+
-'        </div>';
-        
-
-    
-    
-}
-document.getElementById("problems").innerHTML=rezHtml;
-
-for (var i=0; i<problemsArray.length; i++) {
-    addTagingButton(problemsArray[i].permalink); 
-    addMarkingButton(problemsArray[i].permalink); 
-    addHierarchiesToProblem( problemsArray[i].permalink, problemsArray[i].categories);    
-}
-    
+insertProblemList(problemsArray,"problems");
     
 </script>
