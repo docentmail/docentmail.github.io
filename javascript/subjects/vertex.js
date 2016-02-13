@@ -29,7 +29,6 @@ toc: "{{ thepage.toc | replace: "'", '&#39;'| replace: '"', '&quot;' | newline_t
 });
 {% endif %}{% endfor %}    
 
-
 var hierarchy = 
 [
 {uuid: "7c8d2afe-2293-416f-aaf4-8e53cd722f54",  // javascript all
@@ -44,6 +43,11 @@ var hierarchy =
                     children: []  
                 }
                  ,
+                {   uuid: "cac07393-773d-47e9-b916-461296f8cb66", // Operators and Expressions
+                    children: []  
+                }
+
+                 ,             
                 {   uuid: "3860560a-6429-41fc-b2aa-5e9b78ea1df6", // Flow control
                     children: []  
                 }

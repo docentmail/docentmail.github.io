@@ -1,0 +1,68 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-10-17-12
+permalink: /javascript/problem/2016-02-10-17-12.html
+categories: (javascript),(33973ff5-be8e-4435-95dc-bd91d423f389)   # Syntax   
+header: |
+ <p><b>Question:</b> What is result of execution of the snippet?</p>
+ <PRE>
+ function a(){
+      return
+        1;
+ }
+ alert (a());
+ </PRE>      
+
+complexity: 2
+importance: 3
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Spaces, new lines, tabs, semicolons</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> What is result of execution of the snippet?</p>  
+{% highlight js %}
+ function a(){
+	return
+	1;
+ }
+ alert (a());
+{% endhighlight %}
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Recall "Rules of Automatic Semicolon Insertion" and "The five restricted productions"</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+        <p><b>Answer:</b> <b>alert with "undefined"</b> text.</p>
+            
+            <p><b>Explanation:</b> "return" belongs to "The five restricted productions".  The five restricted productions are return, throw, break, continue, and post-increment/decrement. JavaScript interpreter will automatically insert semicolon after "return" like:
+           
+{% highlight js %}
+ function a(){
+	return;
+	1;
+ }
+ alert (a());
+{% endhighlight %}
+        </p>   
+        
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="https://en.wikipedia.org/wiki/JavaScript_syntax#Whitespace_and_semicolons">wikipedia.org: Whitespace and semicolons</a> <br/>   
+            <a target="_blank"  href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">pdf document: ECMAScript® 2015  Language Specification</a> <br/>      
+        </p>
+
+    </div>
+</div>

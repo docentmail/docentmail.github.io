@@ -1,0 +1,56 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-11-17-00
+permalink: /javascript/problem/2016-02-11-17-00.html
+categories: (javascript),(33973ff5-be8e-4435-95dc-bd91d423f389),(b2fde289-5bf0-46be-8438-9b1730299860)   # Syntax , Functions
+header: |
+ <p><b>Question:</b> What is the name of the practice and what is the purpose of starting libraries with <b>";"</b>?</p>
+ <PRE>
+ ;(function () {.......
+ </PRE>      
+
+complexity: 5
+importance: 2
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Spaces, new lines, tabs, semicolons</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> What is the name of the practice and what is the purpose of starting libraries with <b></b>";"</b>?</p>  
+{% highlight js %}
+;(function () {.......
+{% endhighlight %}
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Recall "Immediately-Invoked Function Expression (IIFE)" and "five problematic characters" JavaScript concept.</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+            
+            <p><b>Answer:</b> Name of the practice is " defensive semicolon". It allows you to safely concatenate several JS files into one, to serve it quicker as one HTTP request.<br/>
+consider this resuls of concatination:           
+{% highlight js %}
+(function(){...})()(function(){...})()
+{% endhighlight %}
+        </p>   
+        
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/"><i>A lot of details:</i> Immediately-Invoked Function Expression (IIFE)</a> <br/>            
+            <a target="_blank"  href="https://en.wikipedia.org/wiki/Immediately-invoked_function_expression">wikipedia.org: Immediately-invoked function expression</a> <br/>   
+            <a target="_blank"  href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">pdf document: ECMAScript® 2015  Language Specification</a> <br/>      
+        </p>
+
+    </div>
+</div>

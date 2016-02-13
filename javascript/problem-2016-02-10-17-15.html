@@ -1,0 +1,71 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-10-17-15
+permalink: /javascript/problem/2016-02-10-17-15.html
+categories: (javascript),(33973ff5-be8e-4435-95dc-bd91d423f389),(b2fde289-5bf0-46be-8438-9b1730299860)   # Syntax , Functions 
+header: |
+ <p><b>Question:</b> Write the snipped into a single line. Put semicolons to don't change the snippet logic. </p>
+ <PRE>
+ x = d 
+ (f+g ).some_method()
+ </PRE>      
+
+complexity: 2
+importance: 3
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">Spaces, new lines, tabs, semicolons</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Write the snipped into a single line. Put semicolons to don't change the snippet logic. </p>  
+{% highlight js %}
+x=d 
+(f+g ).some_method()
+{% endhighlight %}
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Recall "Immediately-Invoked Function Expression (IIFE)" JavaScript concept.</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+            
+            <p><b>Answer:</b> Because of "Immediately-Invoked Function Expression (IIFE)" JavaScript interpreter treats like call of function with name <b>d</b> and paramater <b>f+g</b>. Like this:           
+{% highlight js %}
+x= d(f+g ).some_method();
+{% endhighlight %}
+        </p>   
+        <p>        
+There are  "five problematic" characters to be careful with : "(" , "[" , "+" , "-",  "/" .
+Never omit a semicolon before a statement beginning with the “five problematic” characters.        
+</p> 
+<p>
+    Just use "defensive semicolon" approach to avoid problems like this:
+{% highlight js %}
+x= d 
+;(f+g ).some_method()
+{% endhighlight %}
+    
+</p>        
+        
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="http://benalman.com/news/2010/11/immediately-invoked-function-expression/"><i>A lot of details:</i> Immediately-Invoked Function Expression (IIFE)</a> <br/>            
+            <a target="_blank"  href="https://en.wikipedia.org/wiki/Immediately-invoked_function_expression">wikipedia.org: Immediately-invoked function expression</a> <br/>             <a target="_blank"  href="http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf">pdf document: ECMAScript® 2015  Language Specification</a><br/>      
+            <a target="_blank"  href="http://www.informit.com/articles/article.aspx?p=1997934&seqNum=6">Looks here in case you think that really know how it works</a> <br/> 
+            
+            
+        </p>
+
+    </div>
+</div>

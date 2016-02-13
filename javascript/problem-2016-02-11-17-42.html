@@ -1,0 +1,53 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-11-17-42
+permalink: /javascript/problem/2016-02-11-17-42.html
+categories: (javascript),(868ea026-a188-404d-914f-1a86bc090929),(b507e1c8-ba42-4362-bf55-024db76399a0)   # variables, Object generic
+header: |
+ <p><b>Question:</b> What is <b>typeof null;</b>?</p>
+ <PRE>
+ alert(typeof null);
+ </PRE>      
+complexity: 2
+importance: 24
+author: docentmail
+---
+
+
+<div class="home">
+    <h1 class="post-title"> Functions </h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> What is <b>typeof null;</b>?</p>  
+{% highlight js %}                
+alert(typeof null);
+{% endhighlight %}
+    
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Think! </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+            
+            <p><b>Answer:</b> There <b>typeof null</b> is <b>object</b>
+{% highlight js %}                
+typeof null;  // object
+{% endhighlight %}
+        </p>   
+        
+        <p>  
+            <b>Read it for details:</b><br/>
+            Coming soon
+        </p>
+
+    </div>
+</div>

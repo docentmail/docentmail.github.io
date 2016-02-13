@@ -1,0 +1,66 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-11-17-30
+permalink: /javascript/problem/2016-02-11-17-30.html
+categories: (javascript),(b2fde289-5bf0-46be-8438-9b1730299860)   #  Functions 
+header: |
+ <p><b>Question:</b> What would be message of the alert?</p>
+ <PRE>
+ function fun(aaa   /* some comments */ ){
+  // this is another comment
+  return 'hello';
+ }
+ 
+ alert (fun);
+ </PRE>      
+
+complexity: 2
+importance: 2
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title"> Functions </h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> What would be message of the alert? </p>  
+{% highlight js %}
+function fun(aaa   /* some comments */ ){
+  // this is another comment
+  return 'hello';
+}
+
+alert (fun);
+{% endhighlight %}
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Does alert call function <b>fun</b>?</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+            
+            <p><b>Answer:</b> There is no call of the function <b>fun</b>. Alert will show source of the function with parameters and all comments and whitespaces.
+<pre>
+function fun(aaa   /* some comments */ ){
+  // this is another comment
+  return 'hello';
+}
+</pre>
+        </p>   
+        
+        <p>  
+            <b>Read it for details:</b><br/>
+            Coming soon
+        </p>
+
+    </div>
+</div>

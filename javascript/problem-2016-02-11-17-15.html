@@ -1,0 +1,65 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-11-17-15
+permalink: /javascript/problem/2016-02-11-17-15.html
+categories: (javascript),(cac07393-773d-47e9-b916-461296f8cb66)   # Operators and Expressions
+header: |
+ <p><b>Question:</b> Give values for variables <b>a</b> and <b>b</b> to force first alert print <b>true</b> and second prints <b>false</b>.</p>
+ <PRE>
+ var a=?;
+ var b=?;
+     
+ alert(' a == b '  + (a == b) );
+ alert(' a===b '+ (a === b) );
+ </PRE>      
+
+complexity: 5
+importance: 2
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title"> "==" vs. "====" operators</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> Give values for variables <b>a</b> and <b>b</b> to force first alert print <b>true</b> and second prints <b>false</b>.</p>  
+{% highlight js %}
+ var a=?;
+ var b=?;
+     
+ alert(' a == b '  + (a == b) );
+ alert(' a===b '+ (a === b) );
+{% endhighlight %}
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b>  Recall "==" and "===" difference.</p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+            
+            <p><b>Answer:</b> 1 == '1'  is true because it ignores type, and 1 === '1' because it caresan of types
+{% highlight js %}                
+var a=1;
+var b="1";
+     
+alert(' a == b '  + (a == b) );
+alert(' a===b '+ (a === b) );
+{% endhighlight %}
+        </p>   
+        
+        <p>  
+            <b>Read it for details:</b><br/>
+            Coming soon
+        </p>
+
+    </div>
+</div>
