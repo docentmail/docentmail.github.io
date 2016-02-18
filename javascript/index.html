@@ -9,7 +9,7 @@ layout: default
    <p>Welcome to the main page of JavaScript learning area.</p>    
     <div class="item">
         <a href="/javascript/subjects/javascript-all.html"><b>Top level of the JavaScript topics hierarchy</b></a> <br/>
-        <a href="/javascript/tutorial/index.html"><b>JavaScript list of tutorials and collection of the links</b></a> <br/>   
+        <a href="/javascript/tutorial/index.html"><b>List of JavaScript tutorials and collection of the links</b></a> <br/>   
         <a href="/javascript/roles/java-developer"><b>JavaScript for Java developers</b></a> <br/>
     </div>
 
@@ -55,21 +55,8 @@ layout: default
     <br/>
     
     
-  <h2 >Problems grouped by subject</h2>    
 
-{% assign sorted_pages = site.pages | sort: "title" %}
-{% for page in sorted_pages %}
-  {% if page.categories contains '(javascript)' and page.pagerole contains '(topic)' and page.pagerole contains '(subject)' %}
-    <div class="item">
-        <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-    </div>
-  {% endif %}
-{% endfor %}    
-  
-    
-    <br/>
-    <br/>
-    
+
     
     <h2>Useful links</h2>
     <a target="_blank" href="http://www.youtube.com/playlist?list=PL62E185BB8577B63D">Douglas Crockford Lectures on JavaScript on Youtube</a>
