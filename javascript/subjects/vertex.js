@@ -63,6 +63,10 @@ var hierarchy =
                 {   uuid: "58482ece-2863-4e3c-9e72-4cc963b2858e", // Array
                     children: []  
                 }
+                 ,
+                {   uuid: "cb488993-f167-4065-8816-7a56ec469960", // Booleans
+                    children: []  
+                }
         //         ,
         //        {   uuid: "", // 
         //            children: []  
@@ -112,7 +116,8 @@ var hierarchy =
    ]
 }
 ];
-
+            
+            
 function buildNavForTopic(vertexUUID) {
     
 

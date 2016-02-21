@@ -1,0 +1,53 @@
+---
+pagerole: (problem)
+layout: problem
+title: Problem 2016-02-20-12-48
+permalink: /javascript/problem/2016-02-20-12-48.html
+categories: (javascript),(cb488993-f167-4065-8816-7a56ec469960)  #Boolean 
+header: |
+ <p><b>Question:</b>List all <b>falsy</b> values.</p>
+complexity: 4
+importance: 5
+author: docentmail
+---
+ 
+<div class="home">
+    <h1 class="post-title">"truthy/falsy" values</h1>
+    <h2>{{page.title}}</h2> 
+    <p>complexity: <b>{{page.complexity}}</b> ;  importance: <b>{{page.importance}}</b>; author: <b>{{page.author}}</b>  </p>
+    
+    <hr/>
+    <p><b>Question:</b> List all <b>falsy</b> values.</p>  
+    <input type="button" class="toggle-button" id="toggleTip" onclick="toggleVisibility('toggleTip', 'tip', 'tip')" value="Show tip"/>
+    <div id="tip" style="display: none">
+        <p><b>Tip:</b> Truthy: Something which evaluates to true. </p>   
+    </div>    
+
+
+    <br/>
+    <input type="button" class="toggle-button" id="toggleAnswer" onclick="toggleVisibility('toggleAnswer', 'answer', 'answer')" value="Show answer"/>    
+    <div id="answer" style="display: none">
+    
+            
+            <p><b>Answer:</b> Here is the list of all <b>falsey</b> values in JavaScript.
+{% highlight js %}
+false
+0
+-0
+""
+''
+null
+undefined
+NaN
+{% endhighlight %}
+                
+The all other values are <b>truthy</b>
+        </p>   
+        <p>  
+            <b>Read it for details:</b><br/>
+            <a target="_blank"  href="/javascript/roles/java-developer/truthy-falsy-values.html#links_to_read">truthy/falsy" links for Java Developers</a> <br/> 
+        </p>
+
+    </div>
+</div>
+
