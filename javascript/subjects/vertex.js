@@ -35,6 +35,10 @@ var hierarchy =
  children: [
         {uuid: "79eed495-376a-44c4-aee9-7dbe0accf710",  // javascript core
          children: [
+                {   uuid: "76b749d0-26a1-4116-aa29-643db4a97f5c", // Javascript as a programming language
+                    children: []  
+                }
+                 ,
                 {   uuid: "868ea026-a188-404d-914f-1a86bc090929", // variables
                     children: []  
                 }
