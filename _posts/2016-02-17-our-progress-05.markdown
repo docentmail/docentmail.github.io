@@ -5,9 +5,9 @@ date:   2016-02-17 17:53:36 -0800
 categories: post
 tag: JavaScriptForJavaDevelopers
 ---
-Added new [JavaScript for Java developers](/javascript/roles/java-developer/ ) section. Two initial topics were published:
+Added new [JavaScript for Java developers](http://webculum.org/javascript/roles/java-developer/ ) section. Two initial topics were published:
 
-- [Spaces, new lines, tabs, semicolons](/javascript/roles/java-developer/spaces-semicolons.html) topic was published.
-- [Scopes and hoisting for variables and functions](/javascript/roles/java-developer/scope-and-hoisting.html) topic was published.
+- [Spaces, new lines, tabs, semicolons](http://webculum.org/javascript/roles/java-developer/spaces-semicolons.html) topic was published.
+- [Scopes and hoisting for variables and functions](http://webculum.org/javascript/roles/java-developer/scope-and-hoisting.html) topic was published.
 
 
