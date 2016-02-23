@@ -8,14 +8,17 @@ permalink: /:categories/:title
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: WebCulum -  the WEB
+title: WebCulum -  Know the WEB
 email: webculum@gmail.com
+author: The WebCulum team
+name: Gene Kastyshyn
 description: > # this means to ignore newlines until "baseurl:"
-  Learn Web related technologies with Webculum. For learners and teachers. JavaScript section is ready to use.
+  Webculum is designed to be the best way to learn Web related technologies. For learners and teachers.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://webculum.org" # the base hostname & protocol for your site
 twitter_username: webculm
-github_username:  jekyll
+github_username:  docentmail
+
 
 # Build settings
 markdown: kramdown
