@@ -95,13 +95,14 @@
             <input style="display: none" id="tag_problem_button" type="button" class="mark-button" onclick="tagCurrentProblem_reload()" value="Tag problem"/>          
             <input style="display: none" id="untag_problem_button" type="button" class="mark-button" onclick="unTagCurrentProblem_reload()" value="Un-Tag problem"/>       
 
+<!--
             <input type="button" class="mark-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
             <div id="eval" style="display: none">
                     <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
                     <br/>    
                     <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
             </div>   
-          
+-->          
 
 
             
@@ -140,10 +141,41 @@
             
         </div>
 <script>
+    
+    
+    
+/**
+* inserts "Show eval" block before "Tip" or "Answer" button
+*
+*                <input type="button" class="mark-button" id="toggleEval" onclick="toggleVisibility('toggleEval', 'eval', 'eval')" value="Show eval"/>
+*            <div id="eval" style="display: none">
+*                    <textarea  id="evalme" class="eval-textarea">Type your script here.</textarea>
+*                    <br/>    
+*                    <input type="button" class="eval-button" id="evalbut" onclick="doEval('evalme')" value="Execute script"/>
+*            </div> 
+*/
+    
+    
+    function insertEvaluate(){
+         var tip=document.getElementById("toggleTip");
+         var answer=document.getElementById("toggleAnswer");
+         var divToInsertBefore= tip || answer;
+        
+        
+        var evalDiv = document.createElement("div");
+        evalDiv.innerHTML=" <input type=\"button\" class=\"toggle-button\" id=\"toggleEval\" onclick=\"toggleVisibility(\'toggleEval\', \'eval\', \'eval\')\" value=\"Show eval\"\/>\r\n            <div id=\"eval\" style=\"display: none\">\r\n                    <textarea  id=\"evalme\" class=\"eval-textarea\" placeholder=\"Type your script here.\"><\/textarea>\r\n                    <br\/>    \r\n                    <input type=\"button\" class=\"eval-button\" id=\"evalbut\" onclick=\"doEval(\'evalme\')\" value=\"Execute script\"\/>\r\n            <\/div> ";
+        
+        divToInsertBefore.parentNode.insertBefore(evalDiv, divToInsertBefore);
+    }
+    
+    insertEvaluate();
+    
     if (isCurrentWindowInDrillTodo()) {    
         document.getElementById("DrillDiv").style.display = "block";    
         document.getElementById("drill_numbers").innerHTML=getDrillNumbers();
     }
+    
+    
     
 </script>  
 
