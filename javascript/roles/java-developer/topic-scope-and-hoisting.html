@@ -8,7 +8,7 @@ curriculum: (2cd18723-46ec-48c1-a79b-60e5fd361ec5) #  JavaScript for Java develo
 ---
 
 <div class="home">
- <h3 class="topic-heading"><a href="/javascript/roles/java-developer/">JavasScript For Java Developers</a></h3>
+ <h3 class="topic-heading"><a href="/javascript/roles/java-developer/">JavaScript For Java Developers</a></h3>
  <h1 class="topic-heading">Scopes and hoisting for variables and functions.</h1>
  <div id="topic-hierarchies"></div>
 <p>
@@ -31,15 +31,53 @@ The topic contains problems related to:
 
 
 </p>
+
 <p>
-    Links to read:
+    <a name="links_to_read_scope"></a>
+  <h2 >Javascript Variable Scope.</h2>
+    <p>
+    There is typically one global scope, and each function defined has its own (nested) local scope. Any function defined within another function has a local scope which is linked to the outer function. 
+    </p>    
+    <p>
+        Statement <b>aVar=10;</b> (without var) creates variable in a global scope  (of course if variable was not defined before).
+    </p>    
+    <p>
+        Block scope (grouped statements with curly braces { ... } ) created by <b>if</b>, <b>for</b>, <b>while</b>, <b>switch</b> and other statements does not define a new scope. Only <b>function</b> has it's own scope.
+    </p>    
+Links to read:
+    
     <ul>
+        <li><a target="_blank"  href="https://www.youtube.com/watch?v=ZoFlcv2ByBo"> 8 minute video.</a> </li>
+        <li><a target="_blank"  href="http://stackoverflow.com/questions/500431/what-is-the-scope-of-variables-in-javascript">Brief explanations on stackoverflow.com</a></li>
+        <li><a target="_blank"  href="https://toddmotto.com/everything-you-wanted-to-know-about-javascript-scope">The pretty complex and comprehencive tutorial on toddmotto.com</a></li>
         <li><a target="_blank" href="http://www.scriptingmaster.com/javascript/code-blocks-javascript.asp">Code block on www.scriptingmaster.com </a></li>
-        <li><a target="_blank" href="/javascript/tutorial/hoisting.html">webculum's tutorial: Hoisting behavior</a></li>
-        <li><a target="_blank" href="/javascript/tutorial/variable-scope.html">Webculum "Javascript Variable Scope" tutorial</a></li>
         <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/block">code block on developer.mozilla.org</a></li>
+
+        <!--
+        <li><a target="_blank" href=""></a></li>
+        <li><a target="_blank" href=""></a></li>
+-->
     </ul>
 </p>    
 
+
+
+<p>
+    <a name="links_to_read_hoisting"></a>
+     <h2 >Javascript hoisting.</h2>
+    <p>Variable and funtion declarations are processed before any code is executed.</p>      
+    <p>For variable gets hoisted declaration only. Value would be "undefined".</p>      
+    <p>Function gets hoisted completely (name and implementation).</p>      
+Links to read:
+    <ul>
+        <li><a target="_blank"  href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var#var_hoisting">Very compact explanation on developer.mozilla.org</a> </li>
+        <li><a target="_blank"  href="https://www.youtube.com/watch?v=ZoFlcv2ByBo&feature=youtu.be&t=84"> 1 minute video fragment.</a> </li>
+        <li><a target="_blank"  href="https://www.kenneth-truyers.net/2013/04/20/javascript-hoisting-explained/">The pretty comprehencive tutorial</a></li>
+<!--
+        <li><a target="_blank" href=""></a></li>
+        <li><a target="_blank" href=""></a></li>
+-->
+    </ul>
+</p>    
     
 </div>
