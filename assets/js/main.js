@@ -586,6 +586,20 @@ function toggleVisibility(idButton, idTarget, toggleContentName) {
     }
 } 
 
+/**
+* Shows / hides specific block on the page by ID. 
+* add teturns false; to block <a ..> reload page
+**/
+function simpleToggleVisibility(idTarget) {
+	var targetEle = document.getElementById(idTarget);
+    
+    if (targetEle.style.display == "block" ){
+        targetEle.style.display = "none";
+    } else {
+        targetEle.style.display = "block";
+    }
+    
+} 
 function getURLParameter(name) {
   return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
 }
