@@ -18,7 +18,6 @@ toc: |
 ---
 <a href="#"  onclick="simpleToggleVisibility('novice');return false;">notes for "Novice to Juniour JavaScript"</a>
 <pre id='novice' style="display:none">
-====== Knowledge:        
 1. if...else statement - basic usage with/without else;
 2. understand the logic, sequence of checks, diagrams for all loops;
 3. "for" loop purpose and basic practical usage;
@@ -30,23 +29,133 @@ toc: |
 9. loop control (label; break ; continue ); couple practical samples
   
 ====== links 
-  http://www.techotopia.com/index.php/JavaScript_Flow_Control_and_Looping
-  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
-  
+General –
+http://www.techotopia.com/index.php/JavaScript_Flow_Control_and_Looping
+techotopia.com:  flow control and loops overview 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling
+developer.mozilla.org: Control flow and error handling overview
+
+1. ---
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else
+developer.mozilla.org "if" statement
+
+2. ---
+TBD (to be determined)
+
+3. ---
+TBD (to be determined)
+
+4. ---
+TBD (to be determined)
+
+5. ---
+TBD (to be determined)
+
+6. ---
+TBD (to be determined)
+
+7. ---
+TBD (to be determined)
+
+8. ---
+TBD (to be determined)
+
+9. ---
   https://en.wikibooks.org/wiki/Common_JavaScript_Manual/Break,_continue,_labels
+wikibooks.org: Break, continue, labels
+
   
 ====== Approved problems
-1. -------------
-Use "if" statement to alert "It is night " 
+1. ---------------------------------------
+- question 
+Modify the snippet to use "if" statement to alert "It is night." in case the variable "isNight" is true and "It is not night." otherwise.
+
+– proposed snippet to modify
+var isNight=true; // false
+
+// put you if here
+alert("It is night.");
+alert("It is not night.");
+
+– answer
+var isNight=true; // false
+
+if (isNight) {
+    alert("It is night.") 
+} else {
+  alert("It is not night.")
+}
+
+1. ------------------------------------------------------------------------------------------------------------------
+- question 
+Develop an snippet to use "if" statement to alert "The size fits" in case the variable "size" value is greater than 5 but less than 7.
+
+– proposed snippet to modify
+var size=5; // 6, 8
+
+// put you if here
+alert("The size fits");
+
+
+– answer
+var size=5; // 6, 8
+
+if ( size > 5 and size < 7) {
+    alert("The size fits");
+} 
+
+
+1. ------------------------------------------------------------------------------------------------------------------
+- question 
+Develop an snippet to use "if" statement to alert "You are to young" in case the variable "age" is less or equal 17.
+
+– proposed snippet to modify
+var age=15; // 22
+
+// put you if here
+alert("You are to young");
+
+– answer
+var age=15; // 22
+
+if (age <= 17) {
+    alert("You are to young");
+} 
+
+
+1. ------------------------------------------------------------------------------------------------------------------
+- question 
+Develop an snippet to use "if" statement to alert "type is number" if  in case the type variable "theVar"  is number, "type is string" if type is string less, "type is something else"  otherwise.
+
+– proposed snippet to modify
+var theVar=15; // "hello", [1];
+
+// put you if here
+alert("type is number");
+alert("type is string");
+alert("type is something else");
+
+– answer
+var theVar=15; // "hello", [1];
+
+if (typeof theVar == "number") {
+    alert("type is number");
+} else if (typeof theVar == "string")  {
+   alert("type is string"); 
+} else {
+    alert("type is something else");
+}
+
 
 3. -------------
-Use "for" loop to concatinate all array elements in one string sepatated by ";"
+Use "for" loop to concatenate all array elements in one string separated by ";"
 
 4. -------------
-Use "while" loop to concatinate all array elements in one string sepatated by ";"
+Use "while" loop to concatenate all array elements in one string separated by ";"
 
 5. -------------
-Use "while-do" loop to concatinate all array elements in one string sepatated by ";"
+Use "while-do" loop to concatenate all array elements in one string separated by ";"
 
 3. -------------
 replace "while" loop with "for" loop without changing the logic of snippet
@@ -65,8 +174,5 @@ replace "for" loop with "while" loop without changing the logic of snippet
 
 
 ---------------
-
-
-
 
 </pre>
